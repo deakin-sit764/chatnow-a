@@ -1,4 +1,5 @@
-# GoGo
-Free Bootstrap template for chat bot landing page
+# Demonstration Site for Now Finance Chatbot-AGoGo
 
-Demo: http://imondal007.github.io/gogo/demo
+This project is derived from on imondal007's free Bootstrap template for chat bot landing page
+
+Source: https://github.com/imondal007/gogo
