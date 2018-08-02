@@ -1,0 +1,1099 @@
+{
+    "intents": [
+        {
+            "context_set": "",
+            "patterns": [
+                "Hi",
+                "How are you",
+                "Is anyone there?",
+                "Hello",
+                "Good day"
+            ],
+            "responses": [
+                "Hello, thanks for visiting",
+                "Good to see you again",
+                "Hi there, how can I help?"
+            ],
+            "tag": "greeting"
+        },
+        {
+            "patterns": [
+                "Bye",
+                "See you later",
+                "Goodbye"
+            ],
+            "responses": [
+                "See you later, thanks for visiting",
+                "Have a nice day",
+                "Bye! Come back again soon."
+            ],
+            "tag": "goodbye"
+        },
+        {
+            "patterns": [
+                "Thanks",
+                "Thank you",
+                "That's helpful"
+            ],
+            "responses": [
+                "Happy to help!",
+                "Any time!",
+                "My pleasure"
+            ],
+            "tag": "thanks"
+        },
+        {
+            "patterns": [
+                "Does it cost to get my credit score or credit report?"
+            ],
+            "responses": [
+                "No, you can get your credit score here at NOW FINANCE completely free, along with your personalised interest rate for your personal loan. To get your credit report, you can request access from one of Australia?s three credit reporting bureaus, which are Equifax, Experian, and D&B, and they will send you a free report."
+            ],
+            "tag": "costCreditScore"
+        },
+        {
+            "patterns": [
+                "Does everyone have a credit history?"
+            ],
+            "responses": [
+                "If you have never applied or had any form of credit in the past, you probably won?t have a credit score, although the majority of people do. It is common for those under 18 not to have a credit score as they would have needed to have had a credit card, personal loan, or a utility account in their name, which they wouldn?t normally get until they leave home or in some cases ? as with some personal loans ? they would not be eligible until turning 21."
+            ],
+            "tag": "creditHistory"
+        },
+        {
+            "patterns": [
+                "Why isn't the website showing properly in my browser?"
+            ],
+            "responses": [
+                "To provide you with the best user experience, we have designed Credit Savvy to function with the most recent versions of popular browsers including Chrome, Firefox, Internet Explorer, and Safari.\n\nIf you are experiencing issues then please update your browser to the latest version. If this doesn't solve the problem then do let us know.\n\nIf you are stuck with a non-compatible browser at work (we all know how this feels), then you can always try using your smartphone or other device as Credit Savvy also been designed to work across most mobile devices and browsers."
+            ],
+            "tag": "website"
+        },
+        {
+            "patterns": [
+                "Why can't you verify me?"
+            ],
+            "responses": [
+                "If you continually get our standard 16.95% interest rate and we cannot match you with the credit bureau, this means that either: 1) the details you have entered are incorrect, 2) the credit bureau does not hold your details, 3) we are unable to verify you based on the information you have provided. We are unable to provide credit scores to people who we are unable to identify and verify. Sometimes, we will be unable to verify your identity due to mismatches between your identity information and what is checked. In these cases, unless you are able to submit another identity document, you will be unable to obtain your credit score with NOW FINANCE. If you believe the information held on you to be incorrect then you should contact the relevant credit bureau. For security reasons we limit the number of identity verification attempts per person before we lock further access, in order to safeguard both ourselves and consumers against fraud."
+            ],
+            "tag": "3"
+        },
+        {
+            "patterns": [
+                "Why is my interest rate higher than what your competitors are offering?"
+            ],
+            "responses": [
+                "At NOW FINANCE, we offer loan applicants a personalized interest rate prior to completing the application, with no obligation to proceed. As a result, our rates do not change throughout the process; the rate you get is the rate you will be offered if your personal loan application is accepted. NOW FINANCE will help you avoid surprises post-application.??"
+            ],
+            "tag": "4"
+        },
+        {
+            "patterns": [
+                "Can you give me access to my official credit report?"
+            ],
+            "responses": [
+                "We are unable to provide you with a copy of your credit report.? You can get a copy of your credit report and credit score by asking a credit bureau. The three credit bureaus in Australia are Equifax (formally Veda), Experian, and D&B. Different bureaus may return different information and credit scores, as each collect different information and generate credit scores differently. NOW FINANCE uses Equifax to obtain a copy of your credit report.? You can request a copy of your credit report directly from one of the credit reporting bureaus."
+            ],
+            "tag": "5"
+        },
+        {
+            "patterns": [
+                "Why do you need my personal details and how safe are they?"
+            ],
+            "responses": [
+                "We need your personal details to ensure we can access the correct information and get your credit score, while ensuring it is indeed your information that we?re checking and not someone else?s. We check your identity with Equifax to confirm the ID documents you have provided, and match up your details to provide you with your tailored interest rate. Your personal details are completely safe with us, and you can read more about how we protect your details and data in our Privacy Policy and our Terms and Conditions."
+            ],
+            "tag": "6"
+        },
+        {
+            "patterns": [
+                "How can I get my credit report?"
+            ],
+            "responses": [
+                "You have the right to request access to your credit score free of charge. To do this, all you need to do is get in touch with one of Australia?s three credit reporting bureaus. These are Equifax (formally Veda), Experian, and D&B. At NOW FINANCE, we generate your credit score and process personal loan applications based on the information held by Equifax, although it is worth checking what information is held by all of the credit bureaus with any future credit applications with other lenders in mind."
+            ],
+            "tag": "7"
+        },
+        {
+            "patterns": [
+                "I don't agree with your credit score, what can I do?"
+            ],
+            "responses": [
+                "NOW FINANCE receive your credit score once you have completed an application.? You can complete the Get My Rate to see what your credit score is before you apply.? If you disagree with your credit score, you can get in touch with a credit reporting bureau to request access to your credit file. From here you can check that all the information held on your file is correct and request corrections where necessary. NOW FINANCE uses Equifax (formally Veda) to generate your score and check your profile, so if you are looking to proceed with an application for one of our loans, we recommend getting a copy of your credit report direct from Equifax and checking what information is held."
+            ],
+            "tag": "8"
+        },
+        {
+            "patterns": [
+                "How can I Improve my credit score?"
+            ],
+            "responses": [
+                "There are numerous ways you can improve your credit score. Generally speaking the best ways to maintain and improve your credit score are to avoid late payments on your bills, make any loan or other credit/finance payments on time, pay off any defaults or catch up on any late payments, and avoid applying for credit several times in a short space of time. You can request access to your credit score free, or take out a subscription to be able to always monitor your score. If any incorrect information is held on your credit report, you can request this is corrected."
+            ],
+            "tag": "9"
+        },
+        {
+            "patterns": [
+                "Why is my credit score different to my report?"
+            ],
+            "responses": [
+                "There are three credit bureaus in Australia: Equifax/Veda, Experian, and D&B. Each of these credit bureaus obtains different information for each individual and calculates credit risk in different ways to give an overall picture of whether a lender may want to accept your credit application. Your credit score may therefore change depending on which credit bureau you have used to access your score and file. In addition, your credit score is constantly updating and evolving depending on your circumstances and financial behaviour, including when you pay off a credit card in full or maintain your monthly payments on your phone bill. As each credit bureau calculates your credit score differently you may find your score fluctuates to different degrees with different credit bureaus depending on your circumstances and financial behaviour."
+            ],
+            "tag": "10"
+        },
+        {
+            "patterns": [
+                "Why do you need my drivers licence or passport details"
+            ],
+            "responses": [
+                "We need your driver?s license or passport details so we can verify your identity and access your credit report and credit score. Without seeing these documents we are unable to match you to your credit file, therefore will be unable to give you your interest rate or assess your personal loan application. Verifying these documents also ensures we are checking the right person?s credit report, can provide an interest rate and loan decision based on the correct person?s details, and safeguards you from identity theft and other types of fraud."
+            ],
+            "tag": "11"
+        },
+        {
+            "patterns": [
+                "Why do you need my personal details to get an interest rate?"
+            ],
+            "responses": [
+                "We need your personal details so that we can identify you against your ID and then access your credit report and credit score and ensure we are looking at the correct person?s details. There have been cases in the past of people reporting they had been turned down for credit with various lenders because someone with the same or a similar name lived in the same apartment block, so it is important we have all the information we need. Without your personal details we would be unable to match you to the correct credit file and therefore would not be able to give you your interest rate in advance or a decision on a personal loan application. Checking your personal details also safeguards you from identity theft."
+            ],
+            "tag": "12"
+        },
+        {
+            "patterns": [
+                "Does applying for a loan impact my credit score?"
+            ],
+            "responses": [
+                "Every personal loan application ? and every application you make for credit ? impacts your credit score.?"
+            ],
+            "tag": "13"
+        },
+        {
+            "patterns": [
+                "Do you offer loans for home ownership deposits?"
+            ],
+            "responses": [
+                "No, NOW FINANCE does not offer personal loans to be used as deposits towards buying a home or any other type of property."
+            ],
+            "tag": "14"
+        },
+        {
+            "patterns": [
+                "Do you offer loans for home ownership deposits?"
+            ],
+            "responses": [
+                "No, NOW FINANCE does not offer personal loans to be used as deposits towards buying a home or any other type of property."
+            ],
+            "tag": "15"
+        },
+        {
+            "patterns": [
+                "How do I find out what my personal loan balance is?"
+            ],
+            "responses": [
+                "To find out your personal loan balance, simply give your personal loan advisor a call so we can assist you further.?"
+            ],
+            "tag": "16"
+        },
+        {
+            "patterns": [
+                "Do I get instant approval for a Personal Loan?"
+            ],
+            "responses": [
+                "We don?t offer instant approval for personal loans, as we abide by the Responsible Lending Guidelines. We?ll need to see your documentation once your application is received and will be in touch to let you know exactly what supporting documents we need. The sooner we have all the documentation we need to determine if a loan is suitable, the quicker you will have an answer from us.?"
+            ],
+            "tag": "17"
+        },
+        {
+            "patterns": [
+                "How long before I get the money?"
+            ],
+            "responses": [
+                "Assuming we have all the supporting documentation we need to assess your loan suitability following an approval or conditional approval, we may have the funds in your bank account within 2 hours of final approval. This time frame may change for each individual."
+            ],
+            "tag": "18"
+        },
+        {
+            "patterns": [
+                "Can I apply if I am in a Part 9 Debt Agreement?"
+            ],
+            "responses": [
+                "If you are currently in a Part IX Debt Agreement we are unable to process your loan application. "
+            ],
+            "tag": "19"
+        },
+        {
+            "patterns": [
+                "Why do you need my employers details"
+            ],
+            "responses": [
+                "We will contact your employer to verify your employment status, and conduct employment checks on new customers. We are very discrete and never divulge personal information or any information on the nature of the call."
+            ],
+            "tag": "20"
+        },
+        {
+            "patterns": [
+                "How do I receive the money once my personal loan has been approved?"
+            ],
+            "responses": [
+                "As part of the loan application process, you can nominate if you want your loan disbursement paid to a nominated bank account or paid directly to the suppliers invoice. Once your personal loan application has been received, we aim to give you an initial decision within 24 hours. If your loan application is accepted or you receive a conditional offer, we aim for the time from application to loan settlement to be no more than 72 hours."
+            ],
+            "tag": "21"
+        },
+        {
+            "patterns": [
+                "Can I take out a personal loan for business purposes"
+            ],
+            "responses": [
+                "No. A NOW FINANCE personal loan may not be used for business or business related purposes, including working capital. "
+            ],
+            "tag": "22"
+        },
+        {
+            "patterns": [
+                "Can I make extra payments or repay my loan early"
+            ],
+            "responses": [
+                "Yes, you can make extra repayments to your account and repay your loan early at any time. Currently, there is a $175 early termination fee if you repay your personal loan in full within the first six months, and a $120 early termination fee if you repay your loan in the first 12 months. After 12 months, no early termination fee applies. There are no fees to make additional payments or to increase your regular direct debit payment."
+            ],
+            "tag": "23"
+        },
+        {
+            "patterns": [
+                "How fast is the application process?"
+            ],
+            "responses": [
+                "Completing your personal loan application will take no more than 15 - 20 minutes. You can complete your personal loan application online, or give us a call to go through the application with one of our personal loan experts."
+            ],
+            "tag": "24"
+        },
+        {
+            "patterns": [
+                "What do I do if I cannot make a payment"
+            ],
+            "responses": [
+                "The best thing to do is to call NOW FINANCE  about your current situation and changes which may have occurred.  We will provide you with all hardship options that are available. This is the best option, as there will likely be a range of solutions available and ways that we can help you. Give us a call and let's work through this together and find out how we can help, rather than missing a payment and us then chasing you."
+            ],
+            "tag": "25"
+        },
+        {
+            "patterns": [
+                "Are there any establishment fees"
+            ],
+            "responses": [
+                "Yes, there is an application fee for a NOW FINANCE personal loan. What this amount is will depend on the loan amount.  The NOW FINANCE Personal Loan Advisors will notify you of all fees and charges during application process. "
+            ],
+            "tag": "26"
+        },
+        {
+            "patterns": [
+                "Can I check my account balance online"
+            ],
+            "responses": [
+                "At the moment, there is no facility to check your account balance online. However, if you call us and speak to your personal loan advisor they will be able to provide you with an up to date account balance whenever you require."
+            ],
+            "tag": "27"
+        },
+        {
+            "patterns": [
+                "Can you send documents via the postal system"
+            ],
+            "responses": [
+                "No. All applicants need to have an email address when they apply and documents can be faxed or emailed to us."
+            ],
+            "tag": "28"
+        },
+        {
+            "patterns": [
+                "Do you have a branch that we can visit"
+            ],
+            "responses": [
+                "No, we don't have a branch. All communication is done via email, phone, and virtually to make the loan application and management process as simple as possible. We provide our personal customer service over the phone, and when you have a personal loan with us you will always speak to the same person when you call us."
+            ],
+            "tag": "29"
+        },
+        {
+            "patterns": [
+                "Do you do loans for people who have been bankrupt"
+            ],
+            "responses": [
+                "No, we do not offer personal loans to individuals who have been declared bankrupt as part of our eligibility criteria."
+            ],
+            "tag": "30"
+        },
+        {
+            "patterns": [
+                "Do you do credit checks"
+            ],
+            "responses": [
+                "We do credit checks for all personal loan applications. As a responsible lender we adhere to the Responsible Lending Guidelines. We will assess your personal loan application and your current financial situation based on a variety of factors.  Your credit score makes up one component of the assessment criteria."
+            ],
+            "tag": "31"
+        },
+        {
+            "patterns": [
+                "Can I have a guarantor on the personal loan"
+            ],
+            "responses": [
+                "No. We do not offer personal loans with a guarantor."
+            ],
+            "tag": "32"
+        },
+        {
+            "patterns": [
+                "Do you do joint loans"
+            ],
+            "responses": [
+                "No, we only accept personal loan applications from individuals."
+            ],
+            "tag": "33"
+        },
+        {
+            "patterns": [
+                "What documents will you need from me"
+            ],
+            "responses": [
+                "All of our personal loan applicants are required to have an acceptable form of ID. The ID we require is either an Australian passport (valid or expired within the last 24 months) or a current Australian drivers license and Medicare card. Depending on the outcome of your personal loan application, we may ask to see some additional documentation. What we ask for is different for each application, however to speed up the process it is worth ensuring you have the following to hand: Front & Back of your ID documents, Proof of employment and income, Details of your existing credit commitments, Proof of address, Details of your rent/mortgage payments, Bank statements."
+            ],
+            "tag": "34"
+        },
+        {
+            "patterns": [
+                "What happens after I have applied"
+            ],
+            "responses": [
+                "After your application is received, it will be sent to our credit team who will either approve, conditionally approve or decline your application. If declined, unfortunately we are unable to off you a personal loan at this time. If your personal loan application is conditionally approved, you will need to send us some additional information to enable us to settle the loan and provide you with the funds. This additional information may include your most recent payslip, your last year's PAYG summary, the front and back of the ID you have used in your application, and the front page of your bank statement, although each conditional loan offer and the documents we need will be specific to each applicant.  We may request more information depending on your financial situation."
+            ],
+            "tag": "35"
+        },
+        {
+            "patterns": [
+                "Do you offer loans for people on Centrelink benefits?"
+            ],
+            "responses": [
+                "Yes, although you will also need to be working as we can accept Centrelink benefits as a secondary income source for assessing your financial situation and the affordability of the personal loan you have applied for."
+            ],
+            "tag": "36"
+        },
+        {
+            "patterns": [
+                "Do you do loans for people on a disability pension"
+            ],
+            "responses": [
+                "Unfortunately, we don't do loans for people on a disability pension as this doesn't meet our eligibility criteria. "
+            ],
+            "tag": "37"
+        },
+        {
+            "patterns": [
+                "Do you do loans for people with bad credit"
+            ],
+            "responses": [
+                "We do not offer a specific personal loan for people with bad credit. As a responsible lender, we conduct a credit rating check as well as a manual assessment of your credit file. We base our decision whether to accept or decline your application on both your credit history and your current financial situation. If your current credit score and history means you would be unlikely to be accepted, we recommend you read our blog to learn some great tips for improving your credit score and tidying up your credit file."
+            ],
+            "tag": "38"
+        },
+        {
+            "patterns": [
+                "What are your exit fees"
+            ],
+            "responses": [
+                "Our early exit fees are $175 if you repay your loan in the first six months, and $120 if you repay your loan in the first 12 months. No early exit fees apply should you repay your loan in full after the first 12 months."
+            ],
+            "tag": "39"
+        },
+        {
+            "patterns": [
+                "How Long will the application take?"
+            ],
+            "responses": [
+                "Our personal loan application process takes 15-20 minutes to complete. We aim to have a conditional answer for all applicants within 24 hours. Once the loan is conditionally approved the length of the process depends on how quickly you return the supporting information we request in addition to your identification documents. "
+            ],
+            "tag": "40"
+        },
+        {
+            "patterns": [
+                "Can I Apply Online"
+            ],
+            "responses": [
+                "Yes, we now have an online application form. You can either apply for your NOW FINANCE personal loan online after getting your interest rate, or you can request a call back from one of our personal loan experts to complete your application over the phone."
+            ],
+            "tag": "41"
+        },
+        {
+            "patterns": [
+                "Do you need to provide security for a personal loan?"
+            ],
+            "responses": [
+                "You only need to provide security for a personal loan if you are taking out a secured personal loan.  An unsecured loan does not require security.  "
+            ],
+            "tag": "42"
+        },
+        {
+            "patterns": [
+                "What's a comparison rate?"
+            ],
+            "responses": [
+                "A comparison rate helps you to identify the true cost of your personal loan. The comparison rate includes the base interest rate, as well as any loan fees and charges, to give you a single percentage rate that you can use to assess loans from different providers. Ensure you use the comparison rate as your benchmark when shopping around for personal loans, and avoid choosing a specific provider based purely on the base interest rate as you may not know what additional costs and fees you will be subject to."
+            ],
+            "tag": "43"
+        },
+        {
+            "patterns": [
+                "What's the difference between a secured loan and unsecured loan?"
+            ],
+            "responses": [
+                "A secured loan is secured against an asset that you own. This will be your car or other vehicle that can be registered as security against the loan. When you take out a secured loan you are using this asset as collateral should you fail to meet your loan repayments. For example, should you default on your secured loan repayments, as part of the agreement your loan provider may take possession of the security you offered before signing the contract. Due to these loans being secured against assets, consumers can often borrow more at a lower interest rate in comparison to an unsecured loan. An unsecured loan is simply a personal loan that is not secured against an asset. Unsecured loans are usually offered at lower borrowing amounts and with a higher interest rate."
+            ],
+            "tag": "44"
+        },
+        {
+            "patterns": [
+                "I want to pay out my loan in full. Can I do this?"
+            ],
+            "responses": [
+                "You may be able to repay your loan in full, but it is important to contact your lender to obtain a final payout figure. You may incur break costs on top of other fees and charges. If you think you may be in a position to repay your loan in full early before you apply, you should check what your position would be with specific lenders before applying for and accepting a personal loan."
+            ],
+            "tag": "45"
+        },
+        {
+            "patterns": [
+                "How do I make my loan repayments on time?"
+            ],
+            "responses": [
+                "There are two steps to making sure you make all your personal loan repayments on time. The first is to set up a direct debit to ensure your personal loan provider can take the repayments from your bank account at the agreed intervals. If you take out a personal loan with NOW FINANCE, this will be on a weekly or a fortnightly basis. The second step is to manage your finances to ensure that your funds will be in the bank so that the payments can be taken. If your financial circumstances change at any point during your loan term, you should speak to your personal loan provider, who will discuss your options with you. If you need to do something as simple as change the day your direct debit payment is taken, this shouldn?t be a problem for most personal loan providers."
+            ],
+            "tag": "46"
+        },
+        {
+            "patterns": [
+                "Do I have to pay the application fee before I apply for the loan?"
+            ],
+            "responses": [
+                "NOW FINANCE will not charge you an upfront fee prior to applying for a personal loan. An application fee will be charged once your application has been accepted and built into your loan repayments. You will have visibility of all fees and charges prior to accepting the loan offer."
+            ],
+            "tag": "47"
+        },
+        {
+            "patterns": [
+                "is debt consolidation the same as being bankrupt?"
+            ],
+            "responses": [
+                "No, consolidating your debts is not the same as being bankrupt. Debt consolidation is the practice of using a new personal loan, or another product, to pay all of your current debts, thus consolidating your debt commitments to one place. Bankruptcy is when a consumer cannot meet their debt obligations and files a debtors petition with the Australian Financial Security Authority to be declared bankrupt, or when creditors whom are owed at least $5,000 file a creditors petition in a court, having been unable to come to another form of debt settlement."
+            ],
+            "tag": "48"
+        },
+        {
+            "patterns": [
+                "is debt consolidation the same as debt negotiation?"
+            ],
+            "responses": [
+                "No, they are two different things. Debt consolidation is when you take out a new personal loan or another credit product and consolidate all your existing debts into one. Debt negotiation involves speaking to your creditors in order to come to a mutually acceptable agreement. Creditors will offer financial hardship solutions to assist you in the first instance. "
+            ],
+            "tag": "49"
+        },
+        {
+            "patterns": [
+                "You make your regular personal loan repayments via direct debit under the repayment terms agreed with your personal loan provider. With NOW FINANCE, you have the option to choose weekly or fortnightly personal loan repayments based on what is best for you"
+            ],
+            "responses": [
+                "If you are struggling with your repayments and experiencing financial hardship, the first thing you should do is speak to your personal loan provider. Doing this first will enable you to have an honest conversation about your circumstances and see what your loan provider may be able to do to help. If your problem is likely to be short term this could also help you to find a quick resolution and avoid any missed payments being logged on your credit file. If you are unable to come to a solution with your loan provider, you could apply for a financial hardship variation, which would change the terms of your loan, or speak to a debt counselor who will discuss some options with you."
+            ],
+            "tag": "50"
+        },
+        {
+            "patterns": [
+                "How do I make loan repayments?"
+            ],
+            "responses": [
+                "You make your regular personal loan repayments via direct debit under the repayment terms agreed with your personal loan provider. With NOW FINANCE, you have the option to choose weekly or fortnightly personal loan repayments based on what is best for your own personal circumstances. As well as making your regular personal  loan repayments you may also have the option to make additional payments, although depending on your loan provider these extra payments may be subject to fees if they change your regular repayment or the structure of your loan."
+            ],
+            "tag": "51"
+        },
+        {
+            "patterns": [
+                "How do I make loan repayments?"
+            ],
+            "responses": [
+                "You make your regular personal loan repayments via direct debit under the repayment terms agreed with your personal loan provider. With NOW FINANCE, you have the option to choose weekly or fortnightly personal loan repayments based on what is best for your own personal circumstances. As well as making your regular personal  loan repayments you may also have the option to make additional payments, although depending on your loan provider these extra payments may be subject to fees if they change your regular repayment or the structure of your loan."
+            ],
+            "tag": "52"
+        },
+        {
+            "patterns": [
+                "Why might I be offered a different loan amount to my application?"
+            ],
+            "responses": [
+                "Upon receiving your personal loan application and reviewing your credit score and history, your personal loan provider will assess your application based on many things.  Primarily the loan provider will ensure that their product will meet your needs and objectives and to ensure you have the ability to be able to repay the loan committment without any undue hardship.  The loan provider may offer you a loan for a different amount and for this to happen, the provider must be satisfied that you are able to repay the loan. Based on your personal circumstances your loan provider may therefore offer you a personal loan at a lower amount that they believe is affordable to you."
+            ],
+            "tag": "53"
+        },
+        {
+            "patterns": [
+                "Why do I need to provide my bank details for a personal loan?"
+            ],
+            "responses": [
+                "You need to provide your bank details so we know where to send the loan once we have verified your account upon receiving your bank statements. We also need your bank details so we can set up a direct debit payment to ensure your repayments on your NOW FINANCE personal loan are made weekly or fortnightly, depending on the frequency you have chosen for your loan."
+            ],
+            "tag": "54"
+        },
+        {
+            "patterns": [
+                "Why do I need to provide my bank statements for a personal loan?"
+            ],
+            "responses": [
+                "Primarily the reason why we need your bank statements is to verify that the account where we?ll be paying the money is indeed your bank account. In addition, depending on the conditions of your personal loan offer, we may ask to see your last 90 days of bank statements to help us better assess the affordability of the loan you have applied for, your capacity to repay the loan, and as an additional means of verifying your income and general living expenses."
+            ],
+            "tag": "55"
+        },
+        {
+            "patterns": [
+                "Are thre any credit checks involved for a personal loan?"
+            ],
+            "responses": [
+                "Yes. When you apply for a personal loan, as a minimum a personal loan company will look at your credit score. At NOW FINANCE, when you apply for a personal loan or request your credit rate before proceeding to an application, as well as looking at your credit score, one of our personal loan experts looks at your wider credit history to help us make a decision about your personal loan. Given the checks that are conducted when you apply for a personal loan, it is strongly recommended that you take the time to check your credit file is correct prior to making an application."
+            ],
+            "tag": "56"
+        },
+        {
+            "patterns": [
+                "What can I use a personal loan for?"
+            ],
+            "responses": [
+                "With NOW FINANCE, you can use your personal loan for a wide range of purposes, including debt consolidation, to cover the cost of medical, dental, or education bills, to cover travel costs, to pay for a new vehicle or for vehicle repairs, for home improvements, or to help pay for a wedding. "
+            ],
+            "tag": "57"
+        },
+        {
+            "patterns": [
+                "What's the difference between variable and fixed interest rates?"
+            ],
+            "responses": [
+                "When you are looking for a personal loan you might find yourself looking at a choice between variable and fixed interest rate loans. With a fixed rate personal loan, you get your interest rate when you take out your loan, and this is fixed for the loan term. This means that the full amount repayable as well as your regular repayment will always be fixed. With a variable rate interest loan, the interest rate on your loan is subject to change depending on the Reserve Bank of Australia?s cash rate, meaning that your full amount repayable as well as your regular repayment could go up or down during your loan term."
+            ],
+            "tag": "58"
+        },
+        {
+            "patterns": [
+                "What's the difference between variable and fixed interest rates?"
+            ],
+            "responses": [
+                "When you are looking for a personal loan you might find yourself looking at a choice between variable and fixed interest rate loans. With a fixed rate personal loan, you get your interest rate when you take out your loan, and this is fixed for the loan term. This means that the full amount repayable as well as your regular repayment will always be fixed. With a variable rate interest loan, the interest rate on your loan is subject to change depending on the Reserve Bank of Australia?s cash rate, meaning that your full amount repayable as well as your regular repayment could go up or down during your loan term."
+            ],
+            "tag": "59"
+        },
+        {
+            "patterns": [
+                "How often can I make repayments on a personal loan?"
+            ],
+            "responses": [
+                "The frequency you can make repayments on your personal loan will depend on your specific provider. When you take out a personal loan with NOW FINANCE, you have the choice of choosing weekly or fortnightly repayments depending on what works for you."
+            ],
+            "tag": "60"
+        },
+        {
+            "patterns": [
+                "What additional fees should I look for with personal loans?"
+            ],
+            "responses": [
+                "When applying for a personal loan there are a number of fees you should look for. First, look for any loan fees that are not built into the actual comparison rate and when these will become payable. It is also worth looking out for what loan fees would apply if you wanted to make additional repayments against your personal loan or repay your loan in full early. You should also consider what late payment fees apply to your loan should you miss a payment, and discover whether there are any other administration fees that may become payable during your loan term."
+            ],
+            "tag": "61"
+        },
+        {
+            "patterns": [
+                "Should I only be interested in the interest rate of a personal loan?"
+            ],
+            "responses": [
+                "While the interest rate of a personal loan is often the headline in any advertising, and is designed to get you to apply, it isn?t all you should consider even if it is the most important factor in your decision. In addition to considering the interest rate of the loan, look into what loan fees apply, whether you will be able to repay the loan early if you want to, what types of loan are available, and what regular repayment options are open to you. You should also think about the customer service levels different personal loan providers offer and take the time to look at online reviews."
+            ],
+            "tag": "62"
+        },
+        {
+            "patterns": [
+                "Can personal loan companies see all my previous credit history?"
+            ],
+            "responses": [
+                "It depends on your age and how much of a credit history you have, though generally personal loan companies will be able to see information relating to your financial behaviour and use of credit products. When checking your credit history, personal loan companies can see information including any credit cards, personal loans, home loans, credit limits, as well as any information related to any defaults, court judgments, or bankruptcies that you have been subject to."
+            ],
+            "tag": "63"
+        },
+        {
+            "patterns": [
+                "If I apply for a loan, will it affect my credit rating?"
+            ],
+            "responses": [
+                "Applying for one personal loan in isolation will still affect your credit rating. Lenders check your file themselves rather than solely relying on your credit score and seeing repeated applications may be an indicator of underlying financial problems and lead to your application being declined. With NOW FINANCE you can get your interest rate before applying for a personal loan without affecting your credit rating."
+            ],
+            "tag": "64"
+        },
+        {
+            "patterns": [
+                "Will multiple credit enquiries impact my ability to be approved for a personal loan?"
+            ],
+            "responses": [
+                "If you apply for multiple personal loans or other types of credit in a short space of time, then this may affect your ability to be approved for a personal loan. If you are looking for a personal loan and decide to apply for numerous personal loans at once, this will affect your ability to be approved, as lenders will look at your credit file and see these repeat applications. Lenders see repeat applications as a consumer having an urgent need for credit, and this can act as a red flag leading to loan applications being declined."
+            ],
+            "tag": "65"
+        },
+        {
+            "patterns": [
+                "Should I apply to multiple personal loan companies to get the best interest rate?"
+            ],
+            "responses": [
+                "No. Each time you apply for a personal loan, not only does a credit provider run a credit check, but that credit search is logged on your credit file. Applying for many different personal loans in a short period is likely to lead to you being offered increasingly higher interest rates and potentially your applications being declined. Instead of shopping around for personal loans by applying for several at once, do your research prior to applying, including checking your credit file is correct, and only apply for one loan. At NOW FINANCE you can get your interest rate before applying for a personal loan without affecting your credit score."
+            ],
+            "tag": "66"
+        },
+        {
+            "patterns": [
+                "I have been previously bankrupt, am I eligible for a personal loan?"
+            ],
+            "responses": [
+                "NOW FINANCE does not accept personal loan applications from individual who have previously been declared bankrupt. There are some personal loan providers that do provide loans under these circumstances, however these are often short term and payday loans with a high interest rate. Given your previous bankruptcy you should consider whether taking out a personal loan or any other credit product is the right step for you to take."
+            ],
+            "tag": "67"
+        },
+        {
+            "patterns": [
+                "I have been previously bankrupt, am I eligible for a personal loan?"
+            ],
+            "responses": [
+                "NOW FINANCE does not accept personal loan applications from individual who have previously been declared bankrupt. There are some personal loan providers that do provide loans under these circumstances, however these are often short term and payday loans with a high interest rate. Given your previous bankruptcy you should consider whether taking out a personal loan or any other credit product is the right step for you to take."
+            ],
+            "tag": "68"
+        },
+        {
+            "patterns": [
+                "Personal loan companies advertise at low rates, is that the interest I will receive?"
+            ],
+            "responses": [
+                "Not necessarily. Some personal loan companies will often advertise a low interest rate to make a loan seem attractive and to tempt you to apply, however when you receive your loan offer the interest rate you receive may be far higher than the one on the advert. Personal loan companies are required by law to show the comparison rate if they show an interest rate on any advertising or marketing.  So look out for this if applying for a loan online, and remember with NOW FINANCE you can get your interest rate before you proceed to an application with no impact on your credit score."
+            ],
+            "tag": "69"
+        },
+        {
+            "patterns": [
+                "Is my credit score impacted if I apply for a personal loan?"
+            ],
+            "responses": [
+                "Every time you apply for a personal loan or any credit product, the credit enquiry is logged on your credit file. Applying for personal loans or other types of credit, this effects your credit score and if you have many applications in a short space of time i.e. six months, this can be an indicator of underlying financial problems and as such may reduce your creditworthiness. If you are looking for a personal loan, with NOW FINANCE you can get your interest rate before applying with no impact on your credit score. You credit file will be accessed if you proceed to submit an application."
+            ],
+            "tag": "70"
+        },
+        {
+            "patterns": [
+                "Why do personal loan companies ask for my payslips?"
+            ],
+            "responses": [
+                "Personal loan companies ask to see your payslips as it helps them to verify that your employment and your earnings are what you said they were in your personal loan application. If you are conditionally accepted for a personal loan, often those conditions will be based on you providing acceptable forms of identification as well as payslips and other documentation. Failure to provide these will lead to your loan offer being withdrawn. If you apply for a personal loan with NOW FINANCE, you can email your payslips and documents to us or upload them using our online platform."
+            ],
+            "tag": "71"
+        },
+        {
+            "patterns": [
+                "I did not get an offer from GET MY RATE. Why?"
+            ],
+            "responses": [
+                "The two results you may receive if no offer has been made:\n\n \n\n\"Unable to Generate Credit Score  Band\"\n\n \n\nThere may be a range of reasons why we have been unable to generate a credit score bank for you. The common examples tend to be if you have changed your name and/or your address within the last 7 years. The details you enter in GET MY RATE must create a strong similarity with details held Equifax. Where a strong similarity cannot be made, Equifax cannot release your credit score band to NOW FINANCE. You may want to contact Equifax directly to ascertain what details they hold, and update your details with them and try again. \n\nBut we still may be able to assist. You can still complete a personal application with NOW FINANCE, however we do not know what your credit score is until an application has been submitted.\n\nGET MY RATE does not make a credit enquiry on your credit file, as you have not made an application for credit at that stage.\n\n \n\n\"Not eligible at this time\"\n\n \n\nAt NOW FINANCE we have a minimum credit score criteria. Based on your credit score alone, at this stage, you would not be eligible to apply for a NOW FINANCE personal loan. However, continue to check in with us from time to time and use GET MY RATE: once an interest rate offering is made, based on credit score alone, we may be able to assist with a NOW FINANCE personal loan.\n\n \n\nGET MY RATE does not make a credit enquiry on your credit file, as you have not made an application for credit at that stage."
+            ],
+            "tag": "72"
+        },
+        {
+            "patterns": [
+                "What types of personal loans does NOW FINANCE offer?"
+            ],
+            "responses": [
+                "We have a range of purposes which we can providing funding for. You can find the range of purpose from our website www.nowfinance.com.au\n\nBut we're so much more than a one-stand-alone purpose; we can bundle up to three purposes per application into one convenient repayment.\n\nTo kick off your goal from a NOW FINANCE personal loan, obtain your personalised interest rate NOW at: GET MY RATE\n\n \n\nNote: All applications are subject to the current lending assessment and criteria of NOW FINANCE."
+            ],
+            "tag": "73"
+        },
+        {
+            "patterns": [
+                "I am, or someone I know is getting married. Does NOW FINANCE do wedding personal loans?"
+            ],
+            "responses": [
+                "We sure do! To kick off creating that special day and memories for years to come, obtain your personalised interest rate NOW at: GET MY RATE\n\n \n\nNote: All applications are subject to the current lending assessment and criteria of NOW FINANCE."
+            ],
+            "tag": "74"
+        },
+        {
+            "patterns": [
+                "I have medical / dental expenses. Does NOW FINANCE do medical or dental personal loans?"
+            ],
+            "responses": [
+                "We sure do! To kick off covering the costs of your medical or dental procedure, obtain your personalised interest rate NOW at: GET MY RATE\n\n \n\nNote: All applications are subject to the current lending assessment and criteria of NOW FINANCE."
+            ],
+            "tag": "75"
+        },
+        {
+            "patterns": [
+                "I want to buy household items for my home. Does NOW FINANCE do household personal loans?"
+            ],
+            "responses": [
+                "We sure do! To kick off purchasing the new additions to your household, obtain your personalised interest rate NOW at: GET MY RATE\n\n \n\nNote: All applications are subject to the current lending assessment and criteria of NOW FINANCE."
+            ],
+            "tag": "76"
+        },
+        {
+            "patterns": [
+                "I want to renovate my house. Does NOW FINANCE do renovation personal loans?"
+            ],
+            "responses": [
+                "We sure do! To kick off your goal of renovating your house into your dream home, obtain your personalised interest rate NOW at: GET MY RATE\n\n \n\nNote: All applications are subject to the current lending assessment and criteria of NOW FINANCE."
+            ],
+            "tag": "77"
+        },
+        {
+            "patterns": [
+                "I want to buy a car. Does NOW FINANCE do car loans?"
+            ],
+            "responses": [
+                "We sure do! To kick off purchasing your new set of wheels, obtain your personalised interest rate NOW at: GET MY RATE\n\n \n\nNote: All applications are subject to the current lending assessment and criteria of NOW FINANCE."
+            ],
+            "tag": "78"
+        },
+        {
+            "patterns": [
+                "I have a couple of small debts that I want to payout. Does NOW FINANCE do debt consolidation personal loans?"
+            ],
+            "responses": [
+                "We sure do! To kick off your goal of consolidating your debts into one easy repayment, obtain your personalised interest rate NOW at: GET MY RATE\n\n \n\nNote: All applications are subject to the current lending assessment and criteria of NOW FINANCE."
+            ],
+            "tag": "79"
+        },
+        {
+            "patterns": [
+                "I am employed and I am Casual. Am I eligible to apply for a NOW FINANCE personal loan?"
+            ],
+            "responses": [
+                "We may be able to assist if you have been with your current employer for 6 months or more.\n\nKick off your application by obtaining your personalised interest rate NOW at: GET MY RATE\n\n \n\nNote: All applications are subject to the current lending assessment and criteria of NOW FINANCE."
+            ],
+            "tag": "80"
+        },
+        {
+            "patterns": [
+                "I have just started a new job and I am Full-Time/ Part-Time. Am I eligible to apply for a NOW FINANCE personal loan?"
+            ],
+            "responses": [
+                "We may be able to assist if you have passed or are not subject to a probation period.\n\nKick off your application with us by obtaining your personalised interest rate NOW at: GET MY RATE\n\n \n\nNote: All applications are subject to the current lending assessment and criteria of NOW FINANCE."
+            ],
+            "tag": "81"
+        },
+        {
+            "patterns": [
+                "I am self-employed. Am I eligible to apply for a NOW FINANCE personal loan?"
+            ],
+            "responses": [
+                "We may be able to assist, as long as your ABN has been registered for longer than 12 months (and) you can provide your last financial year's Individual Notice of Assessment.\n\nKick off your application with us by obtaining your personalised interest rate NOW at: GET MY RATE\n\n \n\nNote: All applications are subject to the current lending assessment and criteria of NOW FINANCE."
+            ],
+            "tag": "82"
+        },
+        {
+            "patterns": [
+                "I am a current NOW FINANCE customer and I want to know if you have an online portal so I can keep track of my account with you. Can you help?"
+            ],
+            "responses": [
+                "Stay tuned! We are currently developing an online customer portal that will allow you to keep track of your account with us.\n\nIn the meantime, contact us by:\n\n1) Contacting our Customer Care team on 1300 275 669 (9AM - 8PM EST, Mon-Fri)\n\n2) Emailing our Customer Care team at: customerservice@nowfinance.com.au\n\n3) Online Chat with our Customer Care or Personal Loan Advisor team at www.nowfinance.com.au"
+            ],
+            "tag": "83"
+        },
+        {
+            "patterns": [
+                "I am a current NOW FINANCE customer and I want a statement / payout figure / balance of my account. Can you help?"
+            ],
+            "responses": [
+                "We can help by contacting us:\n\n1) Contacting our Customer Care team on 1300 275 669 (9AM - 8PM EST, Mon-Fri)\n\n2) Emailing our Customer Care team at: customerservice@nowfinance.com.au\n\n3) Online Chat with our Customer Care or Personal Loan Advisor team at www.nowfinance.com.au"
+            ],
+            "tag": "84"
+        },
+        {
+            "patterns": [
+                "I am a current NOW FINANCE customer and I need to update my address / email / contact details with you. Can you help?"
+            ],
+            "responses": [
+                "Update your details by contacting us:\n\n1) Contacting our Customer Care team on 1300 275 669 (9AM - 8PM EST, Mon-Fri)\n\n2) Emailing our Customer Care team at: customerservice@nowfinance.com.au\n\n3) Online Chat with our Customer Care or Personal Loan Advisor team at www.nowfinance.com.au"
+            ],
+            "tag": "85"
+        },
+        {
+            "patterns": [
+                "I am a current NOW FINANCE customer and I want to update my banking details. Can you help?"
+            ],
+            "responses": [
+                "Request a new Direct Debit Authority to be emailed to you by contacting us:\n\n1) Contacting our Customer Care team on 1300 275 669 (9AM - 8PM EST, Mon-Fri)\n\n2) Emailing our Customer Care team at: customerservice@nowfinance.com.au\n\n3) Online Chat with our Customer Care or Personal Loan Advisor team at www.nowfinance.com.au"
+            ],
+            "tag": "86"
+        },
+        {
+            "patterns": [
+                "I am on a 457 Visa or Temporary Resident. Am I eligible to apply for a NOW FINANCE personal loan?"
+            ],
+            "responses": [
+                "All NOW FINANCE applicants must be a citizen or permanent resident (excluding 457 Visa holders) of Australia. \n\nNOW FINANCE will be unable to offer a personal loan to individuals who are not a citizen or a permanent resident of Australia."
+            ],
+            "tag": "87"
+        },
+        {
+            "patterns": [
+                "I live overseas. Am I eligible for a NOW FINANCE personal loan?"
+            ],
+            "responses": [
+                "All NOW FINANCE applicants must be a citizen or permanent resident (excluding 457 Visa holders) of Australia. \n\nNOW FINANCE will be unable to offer a personal loan to individuals who are not a citizen or a permanent resident of Australia."
+            ],
+            "tag": "88"
+        },
+        {
+            "patterns": [
+                "I have a low credit score and/or bad credit. Am I eligible to apply for a NOW FINANCE personal loan?"
+            ],
+            "responses": [
+                "We may be able to assist. Low credit score and/or bad credit is subjective to each individual's own definition of these two words.\n\nNOW FINANCE allows you to obtain your credit score upfront and without making a credit enquiry. You can obtain your credit score by clicking GET MY RATE from our www.nowfinance.com.au. GET MY RATE will, based on credit score alone, determine if you are eligible to apply for a NOW FINANCE personal loan.\n\nNOW FINANCE is unable to offer individuals a personal loan if they have unpaid or settled credit defaults or judgements. Subject to credit score, we allow only one paid utility or telco credit default, with the amount paid being less than $1500.\n\nAll NOW FINANCE personal loan applications are subject to credit assessment and lending criteria."
+            ],
+            "tag": "89"
+        },
+        {
+            "patterns": [
+                "I am a Broker looking to become accredited with NOW FINANCE. How can I start the accreditation process?"
+            ],
+            "responses": [
+                "NOW FINANCE would be keen to discuss getting you accredited with us. \n\nPlease contact NOW FINANCE on 1300 275 669 to obtain the contact details for a Business Development Manager in your State or Territory."
+            ],
+            "tag": "90"
+        },
+        {
+            "patterns": [
+                "I am a NOW FINANCE accredited Broker and I have a question about an application. Can you help?"
+            ],
+            "responses": [
+                "Feel free to contact your Business Development Manager, or our Credit and Settlements team on 1300 367 716 (Mon-Fri, 9AM - 8PM EST). Alternatively, you can email your enquiry to the team at: inquiries@nowfinance.com.au"
+            ],
+            "tag": "91"
+        },
+        {
+            "patterns": [
+                "I want to apply for a NOW FINANCE personal loan that is less than $5,000. Can NOW FINANCE assist?"
+            ],
+            "responses": [
+                "Our minimum funding amount is $5000. Jump onto our website and have a look at the purposes we do fund - we can bundle three purposes up into the one loan!\n\nTo kick off your goal via a NOW FINANCE personal loan, obtain your personalised interest rate NOW at: GET MY RATE\n\n \n\nNote: All applications are subject to the current lending assessment and criteria of NOW FINANCE."
+            ],
+            "tag": "92"
+        },
+        {
+            "patterns": [
+                "I am self-employed. Does NOW FINANCE do business loans/lending?"
+            ],
+            "responses": [
+                "NOW FINANCE does specialise in providing finance for individuals who are self-employed. In order to be eligible to apply for a NOW FINANCE personal loan, your business' ABN must have been registered for a minimum of 12 months (and) you must be able to provide your ATO issued Individual Notice of Assessment for the current or prior financial year ending. \n\nA NOW FINANCE personal loan must be used wholly for an accepted personal purpose(s) \n\nNOW FINANCE does not offer or provide finance for any type of business lending enquiry; business capital injection or cashflow purpose; or, for business asset or equipment acquisition. "
+            ],
+            "tag": "93"
+        },
+        {
+            "patterns": [
+                "I receive Centrelink. Am I eligible to apply for a NOW FINANCE personal loan?"
+            ],
+            "responses": [
+                "All NOW FINANCE customers need to earn their main or primary income from salary/wages or be self employed. \n\n \n\nIf your main or primary income is from Centrelink we will be unable to offer you a NOW FINANCE personal loan. \n\nHowever, if you are wanting a personal loan and Centrelink is your main or primary income, our related company, MacCredit, may be able to assist in sourcing the funding for you via one of the lenders they use. \n\nMacCredit can be contacted on 1300 884 355 or online: www.maccredit.com.au"
+            ],
+            "tag": "94"
+        },
+        {
+            "patterns": [
+                "I am a single parent who receives a Centrelink Parenting Payment and/or Child Support. Am I eligible to apply for a NOW FINANCE personal loan"
+            ],
+            "responses": [
+                "All NOW FINANCE customers need to earn their main or primary income from salary/wages or be self employed. \n\nWe can only consider Centrelink income and/or Child Support as a secondary income.\n\nIf your main or primary income is from Centrelink and/or Child Support we will be unable to offer you a NOW FINANCE personal loan. \n\nIf you are wanting a personal loan and Centrelink and/or Child Support is your main or primary income, our related company, MacCredit, may be able to assist in sourcing the funding for you via one of the lenders they use. \n\nMacCredit can be contacted on 1300 884 355 or online: www.maccredit.com.au"
+            ],
+            "tag": "95"
+        },
+        {
+            "patterns": [
+                "I am on a Centrelink Disability pension. Am I eligible to apply for a NOW FINANCE personal loan?"
+            ],
+            "responses": [
+                "All NOW FINANCE customers need to earn their main or primary income from salary/wages or be self employed. \n\nWe can only consider Centrelink income as a secondary income.\n\nIf your main or primary income is from Centrelink we will be unable to offer you a NOW FINANCE personal loan. \n\nIf you are wanting a personal loan and Centrelink is your main or primary income, our related company, MacCredit, may be able to assist in sourcing the funding for you via one of the lenders they use. \n\nMacCredit can be contacted on 1300 884 355 or online: www.maccredit.com.au"
+            ],
+            "tag": "96"
+        },
+        {
+            "patterns": [
+                "What are your loan terms and repayment options?"
+            ],
+            "responses": [
+                "Our repayment loan terms are between 18 months and 84 months (7 years). \n\nWe offer weekly or fortnightly contract repayment options; with contract repayments being direct debited from your nominated account.\n\nYou have the flexibility during the loan term to make additional payments into your account and/or payout your loan account with us. (Early repayment fees may apply)"
+            ],
+            "tag": "97"
+        },
+        {
+            "patterns": [
+                "Can I payout my NOW FINANCE personal loan? And are there any fees?"
+            ],
+            "responses": [
+                "You can payout your NOW FINANCE personal loan at any time.\n\nNOW FINANCE may charge an early termination fee, if your personal loan is repaid in full within the first 6 months of your loan opening with us. \n\n \n\nOur current early termination fee schedule:\n\n1) If your NOW FINANCE personal loan is repaid in full within the first 6 months = $175.00\n\n2) If your NOW FINANCE personal loan is repaid in full within 6 to 12 months = $120.00\n\n3) If your NOW FINANCE personal loan is repaid in full after 12 months = $NIL\n\n \n\nIf you would like to pay out your loan with NOW FINANCE, you can request a payout figure via one of the below options:\n\n1) Contact our Customer Care team on 1300 275 669 (9AM - 8PM EST, Mon-Fri)\n\n2) Email our Customer Care team at: customerservice@nowfinance.com.au\n\n3) Online Chat with our Customer Care or Personal Loan Advisor team at www.nowfinance.com.au"
+            ],
+            "tag": "98"
+        },
+        {
+            "patterns": [
+                "Can I make additional payments to my NOW FINANCE personal loan?"
+            ],
+            "responses": [
+                "You can make additional payments to your NOW FINANCE personal loan at any time, with no additional cost. \n\nIf you would like payment details for making additional payments into your NOW FINANCE personal loan, you can request these by contacting us via one of the below:\n\n \n\nThe current ways which our customers can contact NOW FINANCE are:\n\n1) Contact our Customer Care team on 1300 275 669 (9AM - 8PM EST, Mon-Fri)\n\n2) Email our Customer Care team at: customerservice@nowfinance.com.au\n\n3) Online Chat with our Customer Care or Personal Loan Advisor team at www.nowfinance.com.au\n\nNote: An early termination fee may be applicable if you payout or close your loan within the first 12 months of your loan opening with us. "
+            ],
+            "tag": "99"
+        },
+        {
+            "patterns": [
+                "What are your interest rates?"
+            ],
+            "responses": [
+                "NOW FINANCE offers competitive fixed-interest rates for, both, its secured and unsecured personal loans.\n\n1)  UNSECURED Personal Loans: 7.95% - 18.95% depending on your credit score. You can obtain your personalised interest rate upfront, without making a credit enquiry, from www.nowfinance.com.au and by clicking \"Get My Rate\".\n\n2)  SECURED Personal Loans: 9.95% - 15.95% depending on the loan-to-value of the security being offered.\n\n \n\nShould you require more information regarding our secured personal loans, please contact a NOW FINANCE Personal Loan Advisor on 1300 275 669 (9AM - 8PM EST, Mon- Fri) or by requesting a call back by emailing us on customerservice@nowfinance.com.au"
+            ],
+            "tag": "100"
+        },
+        {
+            "patterns": [
+                "Does \"GET MY RATE\" make a credit enquiry on my credit file?"
+            ],
+            "responses": [
+                "GET MY RATE does not make a credit enquiry on your Equifax credit file.\n\nGET MY RATE only allows access to your Equifax credit file for the sole purpose of obtaining your credit score (or credit score band) to allow NOW FINANCE to make a personalised interest rate offer to you. At GET MY RATE stage, you are not applying for credit with NOW FINANCE.\n\nOnly after you have completed GET MY RATE, will you be invited to apply for a NOW FINANCE personal loan. By clicking \"Apply Now\" and completing and submitting a full application do you provide your explicit consent for a credit enquiry to be made."
+            ],
+            "tag": "101"
+        },
+        {
+            "patterns": [
+                "How can I contact you?"
+            ],
+            "responses": [
+                "Contacting us:\n\n1) Contacting our Customer Care team on 1300 275 669 (9AM - 8PM EST, Mon-Fri)\n\n2) Emailing our Customer Care team at: customerservice@nowfinance.com.au\n\n3) Online Chat with our Customer Care or Personal Loan Advisor team at www.nowfinance.com.au"
+            ],
+            "tag": "102"
+        },
+        {
+            "patterns": [
+                "I do not have a Drivers License. Can I use Proof of Age card instead for I.D?"
+            ],
+            "responses": [
+                "At NOW FINANCE we can only accept the following two combinations of I.D:\n\n1) (not expired) Australian issued Drivers License or Drivers Permit (AND) (not expired) Medicare Card\n\n(OR)\n\n2) Australian issued Passport (current or expired within the last 24 months)\n\n \n\nNOW FINANCE is unable to offer a personal loan to individuals who are unable to meet one of the two I.D combinations above.\n\nIf you are wanting a personal loan, however are unable to meet one of the two I.D combinations above, our related company, MacCredit, may be able to assist in sourcing the funding for you via one of the lenders they use. \n\nMacCredit can be contacted on 1300 884 355 or online: www.maccredit.com.au"
+            ],
+            "tag": "103"
+        },
+        {
+            "patterns": [
+                "What I.D does NOW FINANCE accept?"
+            ],
+            "responses": [
+                "We can only accept the following ID combinations (pick which combination)\n\n \n\n1) Current Australian issued Drivers License or Drivers Permit (AND) Current Medicare Card\n\n \n\n(OR)\n\n \n\n2) Australian issued Passport (current or expired within the last 24 months)\n\n \n\nIf you are wanting a personal loan, however are unable to meet one of the two I.D combinations above, our related company, MacCredit, may be able to assist in sourcing the funding for you via one of the lenders they use. \n\nMacCredit can be contacted on 1300 884 355 or online: www.maccredit.com.au"
+            ],
+            "tag": "104"
+        },
+        {
+            "patterns": [
+                "I am a current NOW FINANCE customer. Am I eligible to apply for refinance?"
+            ],
+            "responses": [
+                "Welcome back! :)\n\nWe would be keen to see if we can assist you again with refinancing your current loan account with us.\n\nAll personal loan applications are assessed against our current lending and assessment criteria.\n\nAt NOW FINANCE, we are keen to provide you with choice when it comes to lodging your new personal loan application for refinance which you can do by:\n\n \n\n1) Contacting your Broker directly, if you were originally introduced to NOW FINANCE by your broker.\n\n \n\n2) Lodging your application online at www.nowfinance.com.au and by clicking \"Get My Rate\".\n\n \n\n2) Contacting a NOW FINANCE Personal Loan Advisor over the phone on 1300 275 669.\n\n \n\n3) Requesting a call back from a NOW FINANCE Personal Loan Advisor by emailing customerservice@nowfinance.com.au"
+            ],
+            "tag": "105"
+        },
+        {
+            "patterns": [
+                "I am a previous NOW FINANCE customer. Am I eligible to apply for another NOW FINANCE personal loan?"
+            ],
+            "responses": [
+                "Welcome back! :)\n\nWe would be keen to see if we can assist you again. All personal loan applications are assessed against our current lending and assessment criteria.\n\nAt NOW FINANCE, we are keen to provide you with choice when it comes to lodging your new personal loan application with us by:\n\n \n\n1) Contacting your Broker if you were originally introduced to NOW FINANCE by your broker.\n\n \n\n2) Lodging your application online at www.nowfinance.com.au and by clicking \"Get My Rate\".\n\n \n\n2) Contacting a NOW FINANCE Personal Loan Advisor over the phone on 1300 275 669.\n\n \n\n3) Requesting a call back from a NOW FINANCE Personal Loan Advisor by emailing customerservice@nowfinance.com.au"
+            ],
+            "tag": "106"
+        },
+        {
+            "patterns": [
+                "How long does it take for funds to be deposited into my account?"
+            ],
+            "responses": [
+                "We pay your funds into your account the same day we effect settlement on your personal loan.\n\nGiven the variation in payment processing time-frames for each individual bank or credit union, we advise to allow 24 - 48 business hours for your funds to be received and deposited into your nominated bank account by your bank or credit union.\n\nShould you not receive your funds into your account after 48 hours, please contact NOW FINANCE on 1300 275 669."
+            ],
+            "tag": "107"
+        },
+        {
+            "patterns": [
+                "I am currently Bankrupt or I am under a Part IX Debt Agreement. Am I eligible to apply for a NOW FINANCE personal loan?"
+            ],
+            "responses": [
+                "NOW FINANCE is unable to offer a personal loan to individuals who are currently bankrupt or under a Part IX Debt Agreement."
+            ],
+            "tag": "108"
+        },
+        {
+            "patterns": [
+                "I have previously had a Part IX Debt Agreement? Am I eligible to apply for a NOW FINANCE personal loan?"
+            ],
+            "responses": [
+                "NOW FINANCE is unable to offer a personal loan to individuals who have previously had a Part IX Debt Agreement."
+            ],
+            "tag": "109"
+        },
+        {
+            "patterns": [
+                "I have previously been bankrupt? Am I eligible to apply for a NOW FINANCE personal loan?"
+            ],
+            "responses": [
+                "NOW FINANCE is unable to offer a personal loan to individuals who have been previously bankrupt."
+            ],
+            "tag": "110"
+        },
+        {
+            "patterns": [
+                "Do you do joint or guarantor personal loans?"
+            ],
+            "responses": [
+                "All NOW FINANCE personal loans are in single names.\n\nWe do not, at this stage, offer joint or guarantor personal loans. \n\nIf you are wanting to look at a joint or guarantor personal loan, our related company, MacCredit, may be able to assist in sourcing the funding for you via one of the lenders they use. \n\nMacCredit can be contacted on 1300 884 355 or online: www.maccredit.com.au"
+            ],
+            "tag": "111"
+        },
+        {
+            "patterns": [
+                "How do I know I am eligible for a loan?"
+            ],
+            "responses": [
+                "Eligibility checklist can be accessed on this page - Eligibility Criteria"
+            ],
+            "tag": "112"
+        },
+        {
+            "patterns": [
+                "How can agents leverage knowledge to help customers?"
+            ],
+            "responses": [
+                "You can use our Knowledge Capture app to leverage your team?s collective knowledge.\n\nUsing the app, agents can:\n\n    Search the Help Center without leaving the ticket\n    Insert links to relevant Help Center articles in ticket comments\n    Add inline feedback to existing articles that need updates\n    Create new articles while answering tickets using a pre-defined template\n\nAgents never have to leave the ticket interface to share, flag, or create knowledge, so they can help the customer, while also improving your self-service offerings for other customers.\n\nTo get started with the app, see Installing the Knowledge Capture app and Using the Knowledge Capture app.\n\nAnd before your agents can start creating new knowledge directly from tickets, you?ll need to create a template for them to use. To help you along, we?ve provided some template ideas below. You can copy and paste any sample template below into a new article, add the KCTemplate label to the article, and you?ll be all set.\nQ&A template:\n\n    [Title]\n\n    Question\n    write the question here.\n\n    Answer\n    write the answer here.\n\nSolution template:\n\n    [Title]\n\n    Symptoms\n    write the symptoms here.\n\n    Resolution\n    write the resolution here.\n\n    Cause\n    write the cause here.\n\nHow-to template:\n\n    [Title]\n\n    Objective\n    write the purpose or task here.\n\n    Procedure\n    write the steps here. "
+            ],
+            "tag": "113"
+        },
+        {
+            "patterns": [
+                "How do I publish my content in other languages?"
+            ],
+            "responses": [
+                "Here's the workflow for localizing your Help Center in other languages:\n\n    Get your content translated in the other languages.\n    Configure the Help Center to support all your languages.\n    Add the translated content to the Help Center.\n\nFor instructions, see Localizing the Help Center.\n"
+            ],
+            "tag": "114"
+        },
+        {
+            "patterns": [
+                "How do I customize my Help Center?"
+            ],
+            "responses": [
+                "You can modify the look and feel of your Help Center by changing colors and fonts. You can also change the way your content is organized by using themes. If you're comfortable working with page code, you can dig into the site's HTML, CSS, and Javascript to customize your theme.\n\nTo get started, see Customizing the Help Center."
+            ],
+            "tag": "115"
+        },
+        {
+            "patterns": [
+                "What are these sections and articles doing here?"
+            ],
+            "responses": [
+                "This FAQ is a section in the General category of your Help Center knowledge base. We created this category and a few common sections to help you get started with your Help Center.\n\nThe knowledge base in the Help Center consists of three main page types: category pages, section pages, and articles. Here's the structure:\n\nimage\n\nYou can add your own content and modify or completely delete our content. See the Contributor guide to the Help Center to learn how."
+            ],
+            "tag": "116"
+        }
+    ]
+}
