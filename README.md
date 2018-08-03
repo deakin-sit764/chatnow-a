@@ -2,7 +2,7 @@
 Team project for SIT764 to develop sophisticated chatbot that can enhance the customer experience across the NOW FINANCE business.
 
 
-## Installation Chatbot Prototype
+## Chatbot Prototype Installation
 
 The bot was build using Python 3.6.4 |Anaconda custom (64-bit).
 Compatibility with other distributions is not guaranteed.
