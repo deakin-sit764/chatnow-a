@@ -10,3 +10,6 @@ Install dependecies from the contextual_chatbot folder:
 > pip install -r requirements.txt
 
 Afterwards you can test the prototype by running **responseModel.py**
+
+You might be prompted to download an additional NLTK package. Run the following command from your Python console:
+>nltk.download('punkt')
