@@ -1,2 +1,3 @@
 .ipynb_checkpoints
 tflearn_logs
+__pycache__
