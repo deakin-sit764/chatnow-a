@@ -14,3 +14,10 @@ Afterwards you can test the prototype by running **responseModel.py**
 
 You might be prompted to download an additional NLTK package. Run the following command from your Python console:
 >nltk.download('punkt')
+
+## Current Features
+- Greetings
+- Goodbye
+- Thanking
+- NOW FINANCE FAQ
+
