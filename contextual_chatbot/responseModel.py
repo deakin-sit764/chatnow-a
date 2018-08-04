@@ -1,3 +1,7 @@
+#Importing a few libraries for chekcing memory usage
+import os
+import psutil
+
 # things we need for NLP
 import nltk
 from nltk.stem.lancaster import LancasterStemmer
@@ -53,10 +57,10 @@ def bow(sentence, words, show_details=False):
     # tokenize the pattern
     sentence_words = clean_up_sentence(sentence)
     # bag of words
-    bag = [0]*len(words)  
+    bag = [0]*len(words)
     for s in sentence_words:
         for i,w in enumerate(words):
-            if w == s: 
+            if w == s:
                 bag[i] = 1
                 if show_details:
                     print ("found in bag: %s" % w)
@@ -117,10 +121,16 @@ print ('Welcome to NOW FINANCE')
 print ('')
 
 def generate_response():
-	user_input = input()
-	print ('')
-	response(user_input)
-	print ('')
-	generate_response()
+    user_input = input()
+    print ('')
+    response(user_input)
+    print ('')
+    #Memory usage display code-------------------------------------
+    pid = os.getpid()
+    py = psutil.Process(pid)
+    memoryUse = py.memory_info()[0]/2.**30  # memory use in GB
+    print('memory used by query:', memoryUse)
+    #-----------------------------------------------------------------
+    generate_response()
 
 generate_response()
