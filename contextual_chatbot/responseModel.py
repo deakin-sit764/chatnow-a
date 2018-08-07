@@ -105,8 +105,12 @@ def response(sentence, userID='123', show_details=False):
                         return print(random.choice(i['responses']))
 
             results.pop(0)
+    #Added a little expception handling to deal with empty message
     else:
-        return print(random.choice(negative_answers) + '\n' + rephrase)
+        try:
+            return print(random.choice(negative_answers) + '\n' + rephrase)
+        except:
+            return
 
 
 
