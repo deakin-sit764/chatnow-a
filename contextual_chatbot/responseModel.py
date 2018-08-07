@@ -1,7 +1,3 @@
-#Importing a few libraries for chekcing memory usage
-import os
-import psutil
-
 # things we need for NLP
 import nltk
 from nltk.stem.lancaster import LancasterStemmer
@@ -125,12 +121,6 @@ def generate_response():
     print ('')
     response(user_input)
     print ('')
-    #Memory usage display code-------------------------------------
-    pid = os.getpid()
-    py = psutil.Process(pid)
-    memoryUse = py.memory_info()[0]/2.**30  # memory use in GB
-    print('memory used by query:', memoryUse)
-    #-----------------------------------------------------------------
     generate_response()
 
 generate_response()
