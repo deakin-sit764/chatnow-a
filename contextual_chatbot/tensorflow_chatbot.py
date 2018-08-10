@@ -102,29 +102,30 @@ def response(sentence, userID='123', show_details=False):
                         (userID in context and 'context_filter' in i and i['context_filter'] == context[userID]):
                         if show_details: print ('tag:', i['tag'])
                         # a random response from the intent
-                        return print(random.choice(i['responses']))
+                        return (random.choice(i['responses']))
 
             results.pop(0)
     #Added a little expception handling to deal with empty message
     else:
         try:
-            return print(random.choice(negative_answers) + '\n' + rephrase)
+            #Removed the print statement
+            ans = random.choice(negative_answers) + '\n' + repharse
+            print("Answer generated in chatbot = " + ans)
+            return (random.choice(negative_answers) + '\n' + rephrase)
         except:
-            return
+            return("Exception raised in response")
 
 
 
 negative_answers = ["Sorry I didn’t get that!", "Sorry, I don't understand what you are trying to say.", "I have not learned how to answers that question yet"]
 rephrase = "Please try rephrasing your question."
 
-print ('Welcome to NOW FINANCE')
-print ('')
+#
+#def generate_response():
+#    user_input = input()
+#    print ('')
+#    response(user_input)
+#    print ('')
+#    generate_response()
 
-def generate_response():
-    user_input = input()
-    print ('')
-    response(user_input)
-    print ('')
-    generate_response()
-
-generate_response()
+#generate_response()
