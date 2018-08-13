@@ -48,9 +48,8 @@ class DialogFlow {
 let DialogFlowBot = new DialogFlow('myfirstagent-73433','quickstart-session-id');
 
 try {
-  DialogFlowBot.GetReplyFromDialogflow('Good evening?',function(response) {
+  DialogFlowBot.GetReplyFromDialogflow('process.argv[2]',function(response) {
     console.log(response);
-
   });
 }
 catch(e) {
