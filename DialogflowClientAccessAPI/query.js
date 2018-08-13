@@ -1,12 +1,38 @@
 // You can find your project ID in your Dialogflow agent settings
-const projectId = 'myfirstagent-73433'; //https://dialogflow.com/docs/agents#settings
+const projectId = 'myfirstagent-73433';
 const sessionId = 'quickstart-session-id';
-const query = 'hello';
+const query = 'What is your interest rate?';
 const languageCode = 'en-US';
-const GOOGLE_APPLICATION_CREDENTIALS = './myfirstagent-73433-d64aadadb0b7.json';
+
 // Instantiate a DialogFlow client.
 const dialogflow = require('dialogflow');
 const sessionClient = new dialogflow.SessionsClient();
+
+
+class DialogFlow {
+
+  constructor (projectId,sessionId) {
+    //Set the project and session Ids
+    this.projectId = projectId;
+    this.sessionId = sessionId;
+    this.languageCode = 'en-US';
+
+    //Get a new DialogflowClient
+    this.sessionClient = new dialogflow.SessionsClient();
+    // Define session path
+    this.sessionPath = sessionClient.sessionPath(this.projectId, this.sessionId);
+  }
+
+  async GetReplyFromDialogflow(question){
+    
+
+
+  }
+
+
+}
+
+
 
 // Define session path
 const sessionPath = sessionClient.sessionPath(projectId, sessionId);
