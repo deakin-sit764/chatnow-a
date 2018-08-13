@@ -3,7 +3,7 @@ const projectId = 'myfirstagent-73433'; //https://dialogflow.com/docs/agents#set
 const sessionId = 'quickstart-session-id';
 const query = 'hello';
 const languageCode = 'en-US';
-
+const GOOGLE_APPLICATION_CREDENTIALS = './myfirstagent-73433-d64aadadb0b7.json';
 // Instantiate a DialogFlow client.
 const dialogflow = require('dialogflow');
 const sessionClient = new dialogflow.SessionsClient();
