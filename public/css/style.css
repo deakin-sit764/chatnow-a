@@ -243,10 +243,13 @@ small, .font_small {
   border: 0px;
   margin-bottom: 0px !important;
   position: absolute;
-  top: 0;
+  top: 30px;
   left: 0;
   right: 0;
   z-index: 999;
+}
+.navbar-brand{
+  margin-left: 40px;
 }
 
 @media screen and (min-width: 768px) {
