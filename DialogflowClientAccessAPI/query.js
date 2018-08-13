@@ -1,6 +1,6 @@
 const dialogflow = require('dialogflow');
 //Flag for printing debugging information
-const LOGYES = true;
+const LOGYES = false;
 
 //Custom defined Dialogflow class for encapsulating access to DialogFlow API
 class DialogFlow {
@@ -15,7 +15,7 @@ class DialogFlow {
     this.sessionPath = this.sessionClient.sessionPath(this.projectId, this.sessionId);
   }
 
-  async GetReplyFromDialogflow(question){
+  GetReplyFromDialogflow(question, callback){
     // The text query request.
     let request = {
       session: this.sessionPath,
@@ -35,9 +35,8 @@ class DialogFlow {
          console.log('Detected intent');
          console.log(`  Query: ${result.queryText}`);
          console.log(`  Response: ${result.fulfillmentText}`);
-         return result.fulfillmentText;
       }
-
+      callback(result.fulfillmentText);
       })
       .catch(err => {
         if (LOGYES) console.error('ERROR:', err);
@@ -49,8 +48,10 @@ class DialogFlow {
 let DialogFlowBot = new DialogFlow('myfirstagent-73433','quickstart-session-id');
 
 try {
-  let res =  DialogFlowBot.GetReplyFromDialogflow('Good evening?');
-  console.log("Response = " + res);
+  DialogFlowBot.GetReplyFromDialogflow('Good evening?',function(response) {
+    console.log(response);
+
+  });
 }
 catch(e) {
   console.error('ERROR:', e)
