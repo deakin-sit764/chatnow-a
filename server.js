@@ -1,7 +1,10 @@
 const express = require('express');
 const app = express();
 
-app.use('/watson-assistant', express.static('WatsonAssistantDemo'));
+require('dotenv').config({silent: true});
 
 app.use(express.static('public'));
+
+var server = require('./app');
+
 app.listen(process.env.PORT || 8080, () => console.log("Running Good!"));
