@@ -9,6 +9,7 @@ class DialogFlow {
     this.sessionId = sessionId;
     this.languageCode = 'en-US';
 
+    // Read from the Private key from Heroku's environment variable
     let privateKey = process.env.DIALOGFLOW_PRIVATE_KEY.replace(/\\n/g, '\n');
     let clientEmail = process.env.DIALOGFLOW_CLIENT_EMAIL;
     let config = {
@@ -48,7 +49,7 @@ class DialogFlow {
       })
       .catch(err => {
         if (LOGYES) console.error('ERROR:', err);
-        throw 'In GetReplyFromDialogflow' + err;
+        throw '[GetReplyFromDialogflow]:' + err + '/n';
       });
   }
 }
