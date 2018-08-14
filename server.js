@@ -21,7 +21,7 @@ let DialogFlowBot = new DialogflowAPI(projectId,sessionId);
 // /Dialogflow/query?question=hello%20World
 app.post('/Dialogflow/query', function(req, res) {
   try {
-    var question = req.body.question('question');
+    var question = req.body.question;
     console.log("Question received = " + question);
     DialogFlowBot.GetReplyFromDialogflow(question,function(response) {
       res.send("Answer recevied = " + response);
