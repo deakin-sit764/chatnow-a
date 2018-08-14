@@ -39,6 +39,6 @@ app.post('/Dialogflow/query', function(req, res) {
   }
 })
 
-var server = require('./app');
+var server = require('./watsonassistantapp')(app);
 
 app.listen(process.env.PORT || 8080, () => console.log("Running Good!"));

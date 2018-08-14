@@ -20,56 +20,57 @@ var express = require('express'); // app server
 var bodyParser = require('body-parser'); // parser for post requests
 var AssistantV1 = require('watson-developer-cloud/assistant/v1'); // watson sdk
 
-var app = express();
+var watsonassistantapp = function (app) {
 
-// Bootstrap application settings
-//app.use(express.static('./public')); // load UI from public folder
-app.use('/watson-assistant', express.static('WatsonAssistantDemo'));
-app.use(bodyParser.json());
+    // Bootstrap application settings
+    //app.use(express.static('./public')); // load UI from public folder
+    app.use('/watson-assistant', express.static('WatsonAssistantDemo'));
+    app.use(bodyParser.json());
 
-// Create the service wrapper
+    // Create the service wrapper
 
-var assistant = new AssistantV1({
-  version: '2018-07-10'
-});
-
-// Endpoint to be call from the client side
-app.post('/api/message', function (req, res) {
-  var workspace = process.env.WORKSPACE_ID || '<workspace-id>';
-  if (!workspace || workspace === '<workspace-id>') {
-    return res.json({
-      'output': {
-        'text': 'The app has not been configured with a <b>WORKSPACE_ID</b> environment variable. Please refer to the ' + '<a href="https://github.com/watson-developer-cloud/assistant-simple">README</a> documentation on how to set this variable. <br>' + 'Once a workspace has been defined the intents may be imported from ' + '<a href="https://github.com/watson-developer-cloud/assistant-simple/blob/master/training/car_workspace.json">here</a> in order to get a working application.'
-      }
+    var assistant = new AssistantV1({
+      version: '2018-07-10'
     });
-  }
-  var payload = {
-    workspace_id: workspace,
-    context: req.body.context || {},
-    input: req.body.input || {}
-  };
 
-  // Send the input to the assistant service
-  assistant.message(payload, function (err, data) {
-    if (err) {
-      return res.status(err.code || 500).json(err);
-    }
-
-    // This is a fix for now, as since Assistant version 2018-07-10,
-    // output text can now be in output.generic.text
-    if (data.output.text.length === 0) {
-      if (data.output.generic !== undefined) {
-        if (data.output.generic[0].text !== undefined) {
-          data.output.text = data.output.generic[0].text;
-        } else if (data.output.generic[0].title !== undefined) {
-          data.output.text = data.output.generic[0].title;
-        }
+    // Endpoint to be call from the client side
+    app.post('/api/message', function (req, res) {
+      var workspace = process.env.WORKSPACE_ID || '<workspace-id>';
+      if (!workspace || workspace === '<workspace-id>') {
+        return res.json({
+          'output': {
+            'text': 'The app has not been configured with a <b>WORKSPACE_ID</b> environment variable. Please refer to the ' + '<a href="https://github.com/watson-developer-cloud/assistant-simple">README</a> documentation on how to set this variable. <br>' + 'Once a workspace has been defined the intents may be imported from ' + '<a href="https://github.com/watson-developer-cloud/assistant-simple/blob/master/training/car_workspace.json">here</a> in order to get a working application.'
+          }
+        });
       }
-    }
+      var payload = {
+        workspace_id: workspace,
+        context: req.body.context || {},
+        input: req.body.input || {}
+      };
 
-    return res.json(updateMessage(payload, data));
-  });
-});
+      // Send the input to the assistant service
+      assistant.message(payload, function (err, data) {
+        if (err) {
+          return res.status(err.code || 500).json(err);
+        }
+
+        // This is a fix for now, as since Assistant version 2018-07-10,
+        // output text can now be in output.generic.text
+        if (data.output.text.length === 0) {
+          if (data.output.generic !== undefined) {
+            if (data.output.generic[0].text !== undefined) {
+              data.output.text = data.output.generic[0].text;
+            } else if (data.output.generic[0].title !== undefined) {
+              data.output.text = data.output.generic[0].title;
+            }
+          }
+        }
+
+        return res.json(updateMessage(payload, data));
+      });
+    });
+};
 
 /**
  * Updates the response text using the intent confidence
@@ -103,4 +104,4 @@ function updateMessage(input, response) {
   return response;
 }
 
-module.exports = app;
+module.exports = watsonassistantapp;
