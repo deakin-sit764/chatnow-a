@@ -8,6 +8,15 @@ class DialogFlow {
     this.projectId = projectId;
     this.sessionId = sessionId;
     this.languageCode = 'en-US';
+
+    //let privateKey = JSON.parse(process.env.DIALOGFLOW_PRIVATE_KEY);
+  //  let clientEmail = process.env.DIALOGFLOW_CLIENT_EMAIL;
+  //  let config = {
+	//		credentials: {
+	//			private_key: privateKey,
+	//			client_email: clientEmail
+	//		}
+	//	}
     //Get a new DialogflowClient
     this.sessionClient = new dialogflow.SessionsClient();
     // Define session path
