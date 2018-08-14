@@ -1,5 +1,5 @@
 //Flag for printing debugging information
-const LOGYES = false;
+const LOGYES = true;
 const dialogflow = require('dialogflow');
 //Custom defined Dialogflow class for encapsulating access to DialogFlow API
 class DialogFlow {
@@ -39,7 +39,7 @@ class DialogFlow {
       })
       .catch(err => {
         if (LOGYES) console.error('ERROR:', err);
-        throw err;
+        throw 'In GetReplyFromDialogflow' + err;
       });
   }
 }

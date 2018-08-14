@@ -1,10 +1,14 @@
 const express = require('express');
 const app = express();
+const bodyParser = require('body-parser');
 
 //Add a path DialogFlowAccessAPI
 const DialogflowAPI = require('./DialogflowClientAccessAPI/query.js');
 require('dotenv').config({silent: true});
 app.use(express.static('public'));
+//set body-parser for processing POST route
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended:true}));
 
 //Set the project ID and session //
 const projectId = process.env.PROJECT_ID;
@@ -17,7 +21,8 @@ let DialogFlowBot = new DialogflowAPI(projectId,sessionId);
 // /Dialogflow/query?question=hello%20World
 app.post('/Dialogflow/query', function(req, res) {
   try {
-    var question = req.param('question');
+    var question = req.body.question('question');
+    console.log("Question received = " + question);
     DialogFlowBot.GetReplyFromDialogflow(question,function(response) {
       res.send("Answer recevied = " + response);
     });
