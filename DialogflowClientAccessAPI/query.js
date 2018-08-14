@@ -1,7 +1,6 @@
-const dialogflow = require('dialogflow');
 //Flag for printing debugging information
 const LOGYES = false;
-
+const dialogflow = require('dialogflow');
 //Custom defined Dialogflow class for encapsulating access to DialogFlow API
 class DialogFlow {
   constructor (projectId,sessionId) {
@@ -45,13 +44,4 @@ class DialogFlow {
   }
 }
 
-let DialogFlowBot = new DialogFlow('myfirstagent-73433','quickstart-session-id');
-
-try {
-  DialogFlowBot.GetReplyFromDialogflow('process.argv[2]',function(response) {
-    console.log(response);
-  });
-}
-catch(e) {
-  console.error('ERROR:', e)
-}
+module.exports = DialogFlow;
