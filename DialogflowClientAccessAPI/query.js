@@ -1,5 +1,5 @@
 //Flag for printing debugging information
-const LOGYES = false;
+const LOGYES = true;
 const dialogflow = require('dialogflow');
 //Custom defined Dialogflow class for encapsulating access to DialogFlow API
 class DialogFlow {
@@ -9,16 +9,16 @@ class DialogFlow {
     this.sessionId = sessionId;
     this.languageCode = 'en-US';
 
-    //let privateKey = JSON.parse(process.env.DIALOGFLOW_PRIVATE_KEY);
-  //  let clientEmail = process.env.DIALOGFLOW_CLIENT_EMAIL;
-  //  let config = {
-	//		credentials: {
-	//			private_key: privateKey,
-	//			client_email: clientEmail
-	//		}
-	//	}
+    let privateKey = process.env.DIALOGFLOW_PRIVATE_KEY.replace(/\\n/g, '\n');
+    let clientEmail = process.env.DIALOGFLOW_CLIENT_EMAIL;
+    let config = {
+			credentials: {
+				private_key: privateKey,
+				client_email: clientEmail
+			}
+		}
     //Get a new DialogflowClient
-    this.sessionClient = new dialogflow.SessionsClient();
+    this.sessionClient = new dialogflow.SessionsClient(config);
     // Define session path
     this.sessionPath = this.sessionClient.sessionPath(this.projectId, this.sessionId);
   }
