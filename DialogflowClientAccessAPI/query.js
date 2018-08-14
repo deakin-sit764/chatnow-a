@@ -8,8 +8,18 @@ class DialogFlow {
     this.projectId = projectId;
     this.sessionId = sessionId;
     this.languageCode = 'en-US';
+
+    // Read from the Private key from Heroku's environment variable
+    let privateKey = process.env.DIALOGFLOW_PRIVATE_KEY.replace(/\\n/g, '\n');
+    let clientEmail = process.env.DIALOGFLOW_CLIENT_EMAIL;
+    let config = {
+			credentials: {
+				private_key: privateKey,
+				client_email: clientEmail
+			}
+		}
     //Get a new DialogflowClient
-    this.sessionClient = new dialogflow.SessionsClient();
+    this.sessionClient = new dialogflow.SessionsClient(config);
     // Define session path
     this.sessionPath = this.sessionClient.sessionPath(this.projectId, this.sessionId);
   }
@@ -39,7 +49,7 @@ class DialogFlow {
       })
       .catch(err => {
         if (LOGYES) console.error('ERROR:', err);
-        throw 'In GetReplyFromDialogflow' + err;
+        throw '[GetReplyFromDialogflow]:' + err + '/n';
       });
   }
 }
