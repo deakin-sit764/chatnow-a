@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
+const Debug = process.env.DEBUG;
 
 //Add a path DialogFlowAccessAPI
 const DialogflowAPI = require('./DialogflowClientAccessAPI/query.js');
@@ -22,14 +23,14 @@ let DialogFlowBot = new DialogflowAPI(projectId,sessionId);
 app.post('/Dialogflow/query', function(req, res) {
   try {
     var question = req.body.question;
-    console.log("Question received = " + question);
+    if(Debug) console.log("Question received = " + question);
     DialogFlowBot.GetReplyFromDialogflow(question,function(response) {
-      res.send("Answer recevied = " + response);
+      res.send(response);
     });
 
     }
   catch(e) {
-    res.send('Error while processing POST:' + e);
+    res.send('ERROR:' + e);
   }
 })
 
