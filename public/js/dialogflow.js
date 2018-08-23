@@ -5,6 +5,7 @@
     	myWindow.document.write(botstring);
     }
 
+// Function to call the dialogflow api
 function dialogapi(question) {
     var http = new XMLHttpRequest();
     var url = '/Dialogflow/query';
