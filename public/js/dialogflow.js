@@ -5,10 +5,12 @@
     	myWindow.document.write(botstring);
     }
 
-function dialogapi() {
+function dialogapi(question) {
     var http = new XMLHttpRequest();
     var url = '/Dialogflow/query';
-    var params = 'question=hello';
+    //var params = 'question=hello';
+    var atr = 'question=';
+
     http.open('POST', url, true);
 
     //Send the proper header information along with the request
@@ -20,8 +22,6 @@ function dialogapi() {
         }
       }
 
-      console.log('Calling dialogflow api');
-      http.send(params);
-      console.log(http);
-      console.log('Dialogflow request complete');
+      //http.send(params);
+      http.send(atr + question);
     }
