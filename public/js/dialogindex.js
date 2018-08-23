@@ -1,10 +1,24 @@
-//
+// Function to call the dialogflow api
+function dialogapi(question) {
+    var http = new XMLHttpRequest();
+    var url = '/Dialogflow/query';
+    //var params = 'question=hello';
+    var atr = 'question=';
 
+    http.open('POST', url, true);
 
+    //Send the proper header information along with the request
+    http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
 
+    http.onreadystatechange = function() {//Call a function when the state changes.
+      if(http.readyState == 4 && http.status == 200) {
+          console.log(http.responseText);
+        }
+      }
 
-
-
+      //http.send(params);
+      http.send(atr + question);
+    }
 
 
 //---------------------------------- Credentials Section ----------------------------------//
@@ -165,8 +179,12 @@ function send(text) {
 	// AJAX post request, sends the users text to API.AI and
 	// calls the method newReceivedMessage with the response from API.AI
 	$.ajax({
+
+
 		type: "POST",
-		url: baseUrl + "query?v=20150910",
+		//url: baseUrl + "query?v=20150910",
+		url: '/Dialogflow/query' + 'question=';
+	
 		contentType: "application/json; charset=utf-8",
 		dataType: "json",
 		headers: {
