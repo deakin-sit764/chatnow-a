@@ -19,6 +19,9 @@ function dialogapi() {
           console.log(http.responseText);
         }
       }
+
+      console.log('Calling dialogflow api');
       http.send(params);
       console.log(http);
+      console.log('Dialogflow request complete');
     }
