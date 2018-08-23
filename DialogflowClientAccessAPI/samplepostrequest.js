@@ -12,3 +12,4 @@
       }
     }
     http.send(params);
+    console.log(http);
