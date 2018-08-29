@@ -1,4 +1,4 @@
-console.log("chatbot.js v0.02");
+console.log("chatbot.js v0.03");
 
 $(document).ready(function() {
 
@@ -136,6 +136,13 @@ $(document).ready(function() {
 
 	//------------------------------------------- Send request to API.AI ---------------------------------------
 	function send(text) {
+		console.log($.ajax({
+			type: "POST",
+			url: "/Dialogflow/query",
+			contentType: "application/x-www-form-urlencoded",
+			params: "question=" + text
+		}))
+
 		$.ajax({
 			type: "POST",
 			url: "/Dialogflow/query",
