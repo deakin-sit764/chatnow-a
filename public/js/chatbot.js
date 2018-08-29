@@ -1,4 +1,4 @@
-console.log("chatbot.js v0.04");
+console.log("chatbot.js v0.05");
 
 $(document).ready(function() {
 
@@ -143,13 +143,22 @@ $(document).ready(function() {
 			params: "question=" + text
 		}))*/
 
-		console.log(text);
+		var type = "POST";
+		var url = "/Dialogflow/query";
+		var contentType = "application/x-www-form-urlencoded";
+		var params = "question=" + text;
+
+		console.log("text: " + text);
+		console.log("type: " + text);
+		console.log("url: " + text);
+		console.log("contentType: " + text);
+		console.log("params: " + text);						
 
 		$.ajax({
-			type: "POST",
-			url: "/Dialogflow/query",
-			contentType: "application/x-www-form-urlencoded",
-			params: "question=" + text,
+			type: type,
+			url: url,
+			contentType: contentType,
+			params: params + text,
  			//dataType: 
 			/*type: "GET",
 			url: baseUrl+"query="+text+"&lang=en-us&sessionId="+mysession,
