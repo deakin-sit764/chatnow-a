@@ -135,9 +135,10 @@ $(document).ready(function() {
 	function send(text) {
 		$.ajax({
 			type: "POST",
-			url: "/Dialogflow/query" + "question=" + text,
+			url: "/Dialogflow/query",
 			contentType: "application/x-www-form-urlencoded",
-			//dataType: 
+			params: "question=" + text,
+ 			//dataType: 
 			/*type: "GET",
 			url: baseUrl+"query="+text+"&lang=en-us&sessionId="+mysession,
 			contentType: "application/json",
