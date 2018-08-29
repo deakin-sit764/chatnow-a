@@ -134,13 +134,17 @@ $(document).ready(function() {
 	//------------------------------------------- Send request to API.AI ---------------------------------------
 	function send(text) {
 		$.ajax({
-			type: "GET",
+			type: "POST",
+			url: "/Dialogflow/query" + "question=" + text,
+			contentType: "application/x-www-form-urlencoded",
+			dataType: 
+			/*type: "GET",
 			url: baseUrl+"query="+text+"&lang=en-us&sessionId="+mysession,
 			contentType: "application/json",
 			dataType: "json",
 			headers: {
 				"Authorization": "Bearer " + accessToken
-			},
+			},*/
 			// data: JSON.stringify({ query: text, lang: "en", sessionId: "somerandomthing" }),
 			success: function(data) {
 				main(data);
