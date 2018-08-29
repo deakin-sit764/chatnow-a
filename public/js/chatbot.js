@@ -137,7 +137,7 @@ $(document).ready(function() {
 			type: "POST",
 			url: "/Dialogflow/query" + "question=" + text,
 			contentType: "application/x-www-form-urlencoded",
-			dataType: 
+			//dataType: 
 			/*type: "GET",
 			url: baseUrl+"query="+text+"&lang=en-us&sessionId="+mysession,
 			contentType: "application/json",
