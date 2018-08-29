@@ -1,3 +1,5 @@
+console.log("chatbot.js v0.01");
+
 $(document).ready(function() {
 
 	// Credentials
