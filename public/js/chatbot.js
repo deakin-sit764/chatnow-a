@@ -1,4 +1,4 @@
-console.log("chatbot.js v0.10");
+console.log("chatbot.js v0.11");
 
 $(document).ready(function() {
 
@@ -157,7 +157,7 @@ $(document).ready(function() {
 		$.ajax({
 			type: type,
 			url: url,
-			contentType: ct,
+			Content-type: ct,
 			params: params + text,
  			//dataType: 
 			/*type: "GET",
