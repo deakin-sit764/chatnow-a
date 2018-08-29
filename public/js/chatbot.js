@@ -1,4 +1,4 @@
-console.log("chatbot.js v0.09");
+console.log("chatbot.js v0.10");
 
 $(document).ready(function() {
 
@@ -145,7 +145,7 @@ $(document).ready(function() {
 
 		var type = "POST";
 		var url = "/Dialogflow/query";
-		var contentType = "application/x-www-form-urlencoded";
+		var ct = "application/x-www-form-urlencoded";
 		var params = "question=" + text;
 
 		console.log("text: " + text);
