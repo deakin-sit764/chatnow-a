@@ -1,4 +1,4 @@
-console.log("chatbot.js v0.01");
+console.log("chatbot.js v0.02");
 
 $(document).ready(function() {
 
@@ -8,6 +8,7 @@ $(document).ready(function() {
 
 	var accessToken = "21b3b9deef38447ebe84f84631e28542";
 
+/*
   var http = new XMLHttpRequest();
   var url = '/Dialogflow/query';
   var params = 'question=hello';
@@ -23,7 +24,7 @@ $(document).ready(function() {
     }
     http.send(params);
     console.log(http);
-
+*/
 
 
 
