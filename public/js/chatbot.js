@@ -157,7 +157,7 @@ $(document).ready(function() {
 		$.ajax({
 			type: type,
 			url: url,
-			Content-type: ct,
+			contentType: ct,
 			params: params + text,
  			//dataType: 
 			/*type: "GET",
