@@ -20,8 +20,20 @@ fs.readFile('./chatdata.txt', (err,data) => {
   }
   let = session_counter = 0;
   let final_conversations = '';
+  let index = data.indexOf('(2018-');
+  let android = 0;
+  let iphone = 0;
+  let windows = 0;
+  let mac = 0;
+
   session_data.forEach((data)=> {
-    let index = data.indexOf('(2018-');
+
+    if(data.indexOf('iPhone') != -1) iphone++;
+    if(data.indexOf('Macintosh') != -1) mac++;
+    if(data.indexOf('Linux') != -1) android++;
+    if(data.indexOf('Windows') != -1) windows++;
+
+
     //console.log("starting index = " + index);
     let conversation = data.slice(index);
     session_counter++;
@@ -31,6 +43,10 @@ fs.readFile('./chatdata.txt', (err,data) => {
     final_conversations  += conversation;
   })
 
+  final_conversations += "Number of Android Customers = " + android + '\n';
+  final_conversations += "Number of iPhone Customers = " + iphone + '\n';
+  final_conversations += "Number of Mac Customers = " + mac + '\n';
+  final_conversations += "Number of Windows Customers = " + windows + '\n';
   console.log(final_conversations);
   fs.writeFile('./session_data.txt',final_conversations, (err)=>{
     throw err;
@@ -44,7 +60,7 @@ function showsessions(data){
   let conversation = data.slice(index);
   console.log(conversation);
 }
-function showcountry(data){
+function showcountry(data) {
   //console.log(data);
   let index = data.indexOf('Country Name');
   let endindex = data.indexOf('\n',index);
