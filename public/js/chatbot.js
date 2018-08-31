@@ -1,4 +1,4 @@
-console.log("chatbot.js v0.13");
+console.log("chatbot.js v0.14");
 
 $(document).ready(function() {
 
