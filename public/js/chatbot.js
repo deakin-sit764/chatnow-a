@@ -142,7 +142,7 @@ $(document).ready(function() {
 			contentType: "application/x-www-form-urlencoded",
 			params: "question=" + text
 		}))*/
-
+/*
 		var type = "POST";
 		var url = "/Dialogflow/query";
 		var ct = "application/x-www-form-urlencoded";
@@ -168,6 +168,7 @@ $(document).ready(function() {
 				"Authorization": "Bearer " + accessToken
 			},*/
 			// data: JSON.stringify({ query: text, lang: "en", sessionId: "somerandomthing" }),
+			/*
 			success: function(data) {
 				main(data);
 				// console.log(data);
@@ -175,7 +176,26 @@ $(document).ready(function() {
 			error: function(e) {
 				console.log (e);
 			}
-		});
+		});*/
+
+
+		var http = new XMLHttpRequest();
+  var url = '/Dialogflow/query';
+  var params = 'question=' + text;
+  http.open('POST', url, true);
+
+  //Send the proper header information along with the request
+  http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+
+  http.onreadystatechange = function() {//Call a function when the state changes.
+    if(http.readyState == 4 && http.status == 200) {
+        console.log(http.responseText);
+      }
+    }
+    http.send(params);
+    console.log(http);
+
+
 	}
 
 
