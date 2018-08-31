@@ -18,16 +18,38 @@ fs.readFile('./chatdata.txt', (err,data) => {
     let temp_session = filedata.slice(s1,s2);
     session_data.push(temp_session);
   }
-  session_data.forEach(showcountry);
+  let = session_counter = 0;
+  let final_conversations = '';
+  session_data.forEach((data)=> {
+    let index = data.indexOf('(2018-');
+    //console.log("starting index = " + index);
+    let conversation = data.slice(index);
+    session_counter++;
+    final_conversations += '\n+++++++++++++++++++++++++Session '+session_counter+'++++++++++++++++++++++++++\n';
+    //console.log("Session: "+session_counter);
+    //console.log(conversation);
+    final_conversations  += conversation;
+  })
+
+  console.log(final_conversations);
+  fs.writeFile('./session_data.txt',final_conversations, (err)=>{
+    throw err;
+  })
 });
 
+function showsessions(data){
+  //console.log(data);
+  let index = data.indexOf('(2018-');
+  //console.log("starting index = " + index);
+  let conversation = data.slice(index);
+  console.log(conversation);
+}
 function showcountry(data){
   //console.log(data);
   let index = data.indexOf('Country Name');
   let endindex = data.indexOf('\n',index);
-  //console.log("starting index = " + index);
-  //console.log("ending index = " + endindex);
-  let country = data.slice(index+12,endindex);
-  console.log(country);
 
+  //console.log("ending index = " + endindex);
+  let country = data.slice(index+13,endindex);
+  console.log(country);
 }
