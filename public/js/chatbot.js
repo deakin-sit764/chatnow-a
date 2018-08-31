@@ -1,4 +1,4 @@
-console.log("chatbot.js v0.14");
+console.log("chatbot.js v0.15");
 
 $(document).ready(function() {
 
@@ -181,7 +181,8 @@ $(document).ready(function() {
 
 		var http = new XMLHttpRequest();
   var url = '/Dialogflow/query';
-  var params = 'question=' + text;
+  //var params = 'question=' + text;
+  var params = 'question=';
   http.open('POST', url, true);
 
   //Send the proper header information along with the request
@@ -192,9 +193,9 @@ $(document).ready(function() {
         console.log(http.responseText);
       }
     }
-    http.send(params);
-    console.log(http);
-
+    //http.send(params);
+    //console.log(http);
+    http.send(params + text);
 
 	}
 
