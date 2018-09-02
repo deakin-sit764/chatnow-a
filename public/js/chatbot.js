@@ -1,4 +1,4 @@
-console.log("chatbot.js v0.20");
+console.log("chatbot.js v0.21");
 
 $(document).ready(function() {
 
@@ -181,17 +181,15 @@ $(document).ready(function() {
   			http.onreadystatechange = function() {//Call a function when the state changes.
   			  if(http.readyState == 4 && http.status == 200) {
     	    console.log(http.responseText);
-    	    console.log("post response text");
+    	    data = http.responseText;
+			console.log("server response: " + data);
+			main(data);
    		   		}
   			}
     		
-    		//http.send(params);
+
+    		http.send(params);
     		//console.log(http);
-    		data = http.send(params);
-			console.log("server response: " + data);
-			console.log("send data to main");
-			main(data);
-			console.log("return from main");
 
 			/*
 
