@@ -1,6 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800|Satisfy);
 
-
 /* General */
 body {
   font-family: 'Open Sans', sans-serif;
@@ -172,7 +171,8 @@ mybot .bot-txt:focus {
 }
 
 mybot .resultDiv .botResult {
-  background: #fff;
+  /*background: #fff;*/
+  background: #ffba66;
   color: #000;
   border-radius: 3px;
   padding: 12px;
@@ -204,8 +204,7 @@ mybot .resultDiv .userEnteredText {
   /*background: #9C27B0;*/
   background:#ffaf4d;
   float: right;
-  /*color: #ffffff;*/
-  color: #ffba66;
+  color: #ffffff;
   border-radius: 3px;
   padding: 12px;
   font-size: 15px;
