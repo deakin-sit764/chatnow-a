@@ -204,7 +204,8 @@ mybot .resultDiv .userEnteredText {
   /*background: #9C27B0;*/
   background:#ffaf4d;
   float: right;
-  color: #ffffff;
+  /*color: #ffffff;*/
+  color: #ffba66;
   border-radius: 3px;
   padding: 12px;
   font-size: 15px;
