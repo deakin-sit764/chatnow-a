@@ -6,7 +6,7 @@ body {
   font-family: 'Open Sans', sans-serif;
   font-size: 14px;
   line-height: 1.42857143;
-  color: #333;
+  /*background-color: #fe7436;*/
 }
 
 * {
@@ -103,7 +103,7 @@ mybot.center .chatCont,
 mybot.center .profile_div {
   left: 0;
   right: 0;
-  margin: 0 auto;
+  margin: 0px auto;
 }
 
 mybot.left .chatCont,
@@ -113,13 +113,14 @@ mybot.left .profile_div {
 
 mybot .chatCont {
   position: fixed;
-  width: 400px;
+  width: 401px;
   height: 400px !important;
-  border: 1px solid #dcdcdc;
+  border: 1.5px solid #fe7436;
   bottom: 65px;
   right: 0;
   background: #efe7dd url(../img/bg2.png) repeat;
-  border-top-left-radius: 3px;
+  border-top-left-radius: 6px;
+  border-radius: 6px;
   z-index: 10000;
 display: none;
 }
@@ -131,6 +132,7 @@ mybot .close {
   color: #868686;
   font-size: 18px;
   cursor: pointer;
+  bottom:10px;
 }
 
 mybot .bot_profile {
@@ -144,7 +146,7 @@ mybot .bot_profile {
 }
 
 mybot .bot_p_img {
-  width: 80px;
+  width: 180px;
   border-radius: 50%;
   width: 80px;
   border-radius: 50%;
@@ -164,11 +166,14 @@ mybot .chatForm {
 mybot .bot-txt,
 mybot .bot-txt:focus {
   box-shadow: none;
-  border-radius: 0;
+  border-radius: 9px;
   height: 66px;
   border: 0;
-  border-top: 1px solid #dcdcdc;
-  border-left: 1px solid #dcdcdc;
+  border-top: 1.5px solid #fe7436;
+  border-left: 1.5px solid #fe7436;
+  border-right: 1.5px solid #fe7436;
+  border-bottom: 1.5px solid #fe7436;
+  background-color:#FFE6BD;
 }
 
 mybot .resultDiv .botResult {
@@ -201,7 +206,7 @@ mybot .resultDiv .botResult:before {
 }
 
 mybot .resultDiv .userEnteredText {
-  background: #9C27B0;
+  background: #6e6e6e;
   float: right;
   color: #ffffff;
   border-radius: 3px;
@@ -225,7 +230,7 @@ mybot .resultDiv .userEnteredText:before {
   height: 0;
   border-top: 0px solid rgba(0, 0, 0, 0);
   border-bottom: 15px solid rgba(0, 0, 0, 0);
-  border-left: 15px solid #9C27B0;
+  border-left: 15px solid #6e6e6e;
   position: absolute;
   right: -15px;
   margin-top: -12px;
@@ -258,11 +263,12 @@ mybot .chat-txt {
   box-shadow: 0 0px 1px 0 rgba(0,0,0,0.16),0 0px 10px 0 rgba(0,0,0,0.12);
   padding: 15px 15px;
   border-radius: 50px;
+  background-color: #6e6e6e;
 }
 
 /* Spinner start */
 mybot .spinner {
-  background: #9C27B0;
+  background: #6e6e6e;
   width: 70px;
   text-align: center;
   display: none;
@@ -281,7 +287,7 @@ mybot .spinner:before {
   height: 0;
   border-top: 0px solid rgba(0, 0, 0, 0);
   border-bottom: 15px solid rgba(0, 0, 0, 0);
-  border-right: 15px solid #9C27B0;
+  border-right: 15px solid #6e6e6e;
   left: -15px;
   margin-top: -7px;
 }
@@ -356,7 +362,7 @@ mybot .suggestion:before {
 
 mybot .suggestion .sugg-options {
   display: block;
-  background: #9c27b0;
+  background:#6e6e6e;
   color: #fff;
   text-align: center;
   padding: 5px;

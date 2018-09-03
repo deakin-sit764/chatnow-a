@@ -1,0 +1,19 @@
+/*  Layout  */
+
+.container {
+  max-width: 1000px;
+}
+
+.l-section {
+  padding: $padding-3x $padding-0x;
+  &-full-height {
+    @extend .l-section;
+    @media screen and(min-width: 768px) {
+      height: 100vh;
+    }
+  }
+}
+
+.l-img-center {
+  margin: 0 auto;
+}
