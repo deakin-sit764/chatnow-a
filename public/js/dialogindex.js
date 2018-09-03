@@ -183,8 +183,8 @@ function send(text) {
 
 		type: "POST",
 		//url: baseUrl + "query?v=20150910",
-		url: '/Dialogflow/query' + 'question=';
-	
+		url: '/Dialogflow/query' + 'question=',
+
 		contentType: "application/json; charset=utf-8",
 		dataType: "json",
 		headers: {

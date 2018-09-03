@@ -1,4 +1,4 @@
-console.log("chatbot.js v0.13");
+console.log("chatbot.js v0.21");
 
 $(document).ready(function() {
 
@@ -143,6 +143,7 @@ $(document).ready(function() {
 			params: "question=" + text
 		}))*/
 
+/*
 		var type = "POST";
 		var url = "/Dialogflow/query";
 		var ct = "application/x-www-form-urlencoded";
@@ -153,12 +154,12 @@ $(document).ready(function() {
 		console.log("url: " + url);
 		console.log("contentType: " + ct);
 		console.log("params: " + params);						
-
-		$.ajax({
-			type: type,
+*/
+		/*$.ajax({
+			/*type: type,
 			url: url,
 			contentType: ct,
-			params: params + text,
+			params: params + text,*/
  			//dataType: 
 			/*type: "GET",
 			url: baseUrl+"query="+text+"&lang=en-us&sessionId="+mysession,
@@ -168,6 +169,31 @@ $(document).ready(function() {
 				"Authorization": "Bearer " + accessToken
 			},*/
 			// data: JSON.stringify({ query: text, lang: "en", sessionId: "somerandomthing" }),
+			
+			var http = new XMLHttpRequest();
+  			var url = '/Dialogflow/query';
+  			var params = 'question=' + text;//hello';
+  			http.open('POST', url, true);
+
+  			//Send the proper header information along with the request
+  			http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+
+  			http.onreadystatechange = function() {//Call a function when the state changes.
+  			  if(http.readyState == 4 && http.status == 200) {
+    	    console.log(http.responseText);
+    	    data = http.responseText;
+			console.log("server response: " + data);
+			main(data);
+   		   		}
+  			}
+    		
+
+    		http.send(params);
+    		//console.log(http);
+
+			/*
+
+
 			success: function(data) {
 				main(data);
 				// console.log(data);
@@ -175,22 +201,51 @@ $(document).ready(function() {
 			error: function(e) {
 				console.log (e);
 			}
-		});
+		});*/
+
+		//------------------------ Modified code for server based dialogflow call ------------------------------
+/*
+		var http = new XMLHttpRequest();
+  var url = '/Dialogflow/query';
+  //var params = 'question=' + text;
+  var params = 'question=';
+  http.open('POST', url, true);
+
+  //Send the proper header information along with the request
+  http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+
+  http.onreadystatechange = function() {//Call a function when the state changes.
+    if(http.readyState == 4 && http.status == 200) {
+        console.log(http.responseText);
+      }
+    }
+    //http.send(params);
+    //console.log(http);
+    http.send(params + text);
+*/
 	}
 
 
 	//------------------------------------------- Main function ------------------------------------------------
 	function main(data) {
-		var action = data.result.action;
+		
+		/*var action = data.result.action;
 		var speech = data.result.fulfillment.speech;
 		// use incomplete if u use required in api.ai questions in intent
 		// check if actionIncomplete = false
 		var incomplete = data.result.actionIncomplete;
-		if(data.result.fulfillment.messages) { // check if messages are there
+		*/
+
+		/*if(data.result.fulfillment.messages) { // check if messages are there
 			if(data.result.fulfillment.messages.length > 0) { //check if quick replies are there
 				var suggestions = data.result.fulfillment.messages[1];
 			}
-		}
+		}*/
+
+		setBotResponse(data);
+
+		/*
+		
 		switch(action) {
 			// case 'your.action': // set in api.ai
 			// Perform operation/json api call based on action
@@ -205,7 +260,7 @@ $(document).ready(function() {
 					addSuggestion(suggestions);
 				}
 				break;
-		}
+		}*/
 	}
 
 

@@ -25,7 +25,7 @@
 
                 <div class="chat friend">
                     <div class="user-photo"><img src="img/nf2.png"></div>
-                    <p class="chat-message">Hi There!</p>
+                    <p id ="botdisplaywindow" class="chat-message">Hi there?</p>
                 </div>
 
                 <div class="chat friend" id="loadingGif" style="display: none;">
@@ -38,14 +38,49 @@
         <div class="chat-form">
             <div id="inputDiv">
                 <div id="buttonDiv"></div>
-                <textarea class="input" placeholder="Type your query.." rows="1" data-min-rows='1'></textarea>
+                <textarea id = "inputtext" class="input" placeholder="Type your query.." rows="1" data-min-rows='1'></textarea>
             </div>
             <div id="chat-form-buttons">
                 <!--<input type ="image"id="rec" src="img/microphone.png">-->
-                <input type ="image"id="rec" src="img/orangebutton.png">
+                <button name="action" onclick="respondToQuestion();" value="blue"> <img src="img/orangebutton.png"></button>
                 <input type="image" src="img/keyboard.png" id="switchInputType"/>
             </div>
         </div>
+
+        <script>
+        function respondToQuestion(){
+          let txt = document.getElementById("inputtext").value;
+          document.getElementById("botdisplaywindow").innerHTML += '<br>' + txt;
+          console.log("text entered = " + txt);
+          makeRequestforData(txt);
+          document.getElementById("inputtext").value = "";
+        }
+
+
+        function makeRequestforData(txt){
+
+          var http = new XMLHttpRequest();
+          var url = '/Dialogflow/query';
+          var params = 'question='+txt;
+          http.open('POST', url, true);
+
+          //Send the proper header information along with the request
+          http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+
+          http.onreadystatechange = function() {//Call a function when the state changes.
+            if(http.readyState == 4 && http.status == 200) {
+                console.log(http.responseText);
+                document.getElementById("botdisplaywindow").innerHTML += http.responseText;
+              }
+            }
+            http.send(params);
+            console.log(http);
+
+        }
+
+
+
+        </script>
 
 
         <script type="text/javascript" src="js/dialogindex.js"></script>
