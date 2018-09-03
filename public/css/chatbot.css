@@ -145,11 +145,11 @@ mybot .bot_profile {
 
 mybot .bot_p_img {
   width: 80px;
-  border-radius: 50%;
+  border-radius: 0%;
   width: 80px;
-  border-radius: 50%;
-  background: #fff;
-  box-shadow: 0 0px 1px 0 rgba(0,0,0,0.16), 0 0px 10px 0 rgba(0,0,0,0.12);
+  border-radius: 0%;
+  /*background: #fff;*/
+  /*box-shadow: 0 0px 1px 0 rgba(0,0,0,0.16), 0 0px 10px 0 rgba(0,0,0,0.12);*/
 }
 
 mybot .chatForm {
@@ -201,7 +201,8 @@ mybot .resultDiv .botResult:before {
 }
 
 mybot .resultDiv .userEnteredText {
-  background: #9C27B0;
+  /*background: #9C27B0;*/
+  background:#ffaf4d;
   float: right;
   color: #ffffff;
   border-radius: 3px;
@@ -225,7 +226,8 @@ mybot .resultDiv .userEnteredText:before {
   height: 0;
   border-top: 0px solid rgba(0, 0, 0, 0);
   border-bottom: 15px solid rgba(0, 0, 0, 0);
-  border-left: 15px solid #9C27B0;
+  /*border-left: 15px solid #9C27B0;*/
+  border-left: 15px solid #ffaf4d;
   position: absolute;
   right: -15px;
   margin-top: -12px;
@@ -241,9 +243,9 @@ mybot .profile_div {
 
 mybot .img-profile {
   width: 65px;
-  box-shadow: 0 0px 1px 0 rgba(0,0,0,0.16), 0 0px 10px 0 rgba(0,0,0,0.12);
-  background: white;
-  border-radius: 50px;
+  /*box-shadow: 0 0px 1px 0 rgba(0,0,0,0.16), 0 0px 10px 0 rgba(0,0,0,0.12);*/
+  /*background: white;*/
+  border-radius: 0px;
 }
 
 mybot .col-hgt {
@@ -262,7 +264,8 @@ mybot .chat-txt {
 
 /* Spinner start */
 mybot .spinner {
-  background: #9C27B0;
+  /*background: #9C27B0;*/
+  background: #ffaf4d;
   width: 70px;
   text-align: center;
   display: none;
@@ -281,7 +284,8 @@ mybot .spinner:before {
   height: 0;
   border-top: 0px solid rgba(0, 0, 0, 0);
   border-bottom: 15px solid rgba(0, 0, 0, 0);
-  border-right: 15px solid #9C27B0;
+  /*border-right: 15px solid #9C27B0;*/
+  border-right: 15px solid #ffaf4d;
   left: -15px;
   margin-top: -7px;
 }
