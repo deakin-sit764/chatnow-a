@@ -172,8 +172,9 @@ mybot .bot-txt:focus {
 
 mybot .resultDiv .botResult {
   /*background: #fff;*/
-  background: #ffba66;
-  color: #000;
+  background: #cc7000;
+  /*color: #000*/
+  color: #fff;
   border-radius: 3px;
   padding: 12px;
   font-size: 14px;
@@ -195,7 +196,8 @@ mybot .resultDiv .botResult:before {
   height: 0;
   border-top: 0px solid rgba(0, 0, 0, 0);
   border-bottom: 15px solid rgba(0, 0, 0, 0);
-  border-right: 15px solid #fff;
+  /*border-right: 15px solid #fff;*/
+  border-right: 15px solid #cc7000;
   left: -15px;
   margin-top: -12px;
 }
