@@ -1,5 +1,4 @@
-console.log("chatbot.js v0.22");
-
+console.log("chatbot.js v0.21");
 
 $(document).ready(function() {
 
@@ -33,12 +32,7 @@ $(document).ready(function() {
 	// You can also add the html content in html page and still it will work!
 	var mybot = '<div class="chatCont" id="chatCont">'+
 								'<div class="bot_profile">'+
-<<<<<<< HEAD
 									'<img src="img/bot2.png" class="bot_p_img">'+
-=======
-									//'<img src="img/bot2.svg" class="bot_p_img">'+
-									'<img src="img/nf_logo_t.png" class="bot_p_img">'+
->>>>>>> 14f63f1b6edd7c0df5f716f8d298cbb611cd076e
 									'<div class="close">'+
 										'<i class="fa fa-times" aria-hidden="true"></i>'+
 									'</div>'+
@@ -57,12 +51,7 @@ $(document).ready(function() {
 							'<div class="profile_div">'+
 								'<div class="row">'+
 									'<div class="col-hgt">'+
-<<<<<<< HEAD
 										'<img src="img/bot2.png" class="img-circle img-profile">'+
-=======
-										//'<img src="img/bot2.svg" class="img-circle img-profile">'+
-										'<img src="img/nf_logo_t.png" class="img-circle img-profile">'+
->>>>>>> 14f63f1b6edd7c0df5f716f8d298cbb611cd076e
 									'</div><!--col-hgt end-->'+
 									'<div class="col-hgt">'+
 										'<div class="chat-txt">'+

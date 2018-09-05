@@ -145,15 +145,8 @@ mybot .bot_profile {
 }
 
 mybot .bot_p_img {
-<<<<<<< HEAD
-  width: 180px;
-  border-radius: 50%;
-=======
   width: 80px;
-  border-radius: 0%;
->>>>>>> 14f63f1b6edd7c0df5f716f8d298cbb611cd076e
-  width: 80px;
-  border-radius: 0%;
+  border-radius: 200px;
   /*background: #fff;*/
   /*box-shadow: 0 0px 1px 0 rgba(0,0,0,0.16), 0 0px 10px 0 rgba(0,0,0,0.12);*/
 }
@@ -210,14 +203,18 @@ mybot .resultDiv .botResult:before {
   border-right: 15px solid #e67e00;
   left: -15px;
   margin-top: -12px;
+  background-color: #fe7436;
 }
 
 mybot .resultDiv .userEnteredText {
 <<<<<<< HEAD
   background: #6e6e6e;
+    background-color: #fe7436;
+
 =======
   /*background: #9C27B0;*/
   background:#ffaf4d;
+
 >>>>>>> 14f63f1b6edd7c0df5f716f8d298cbb611cd076e
   float: right;
   color: #ffffff;
@@ -265,7 +262,7 @@ mybot .img-profile {
   width: 65px;
   /*box-shadow: 0 0px 1px 0 rgba(0,0,0,0.16), 0 0px 10px 0 rgba(0,0,0,0.12);*/
   /*background: white;*/
-  border-radius: 0px;
+  border-radius: 35px;
 }
 
 mybot .col-hgt {
