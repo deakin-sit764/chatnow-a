@@ -1,6 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800|Satisfy);
 
-
 /* General */
 body {
   font-family: 'Open Sans', sans-serif;
@@ -146,12 +145,17 @@ mybot .bot_profile {
 }
 
 mybot .bot_p_img {
+<<<<<<< HEAD
   width: 180px;
   border-radius: 50%;
+=======
   width: 80px;
-  border-radius: 50%;
-  background: #fff;
-  box-shadow: 0 0px 1px 0 rgba(0,0,0,0.16), 0 0px 10px 0 rgba(0,0,0,0.12);
+  border-radius: 0%;
+>>>>>>> 14f63f1b6edd7c0df5f716f8d298cbb611cd076e
+  width: 80px;
+  border-radius: 0%;
+  /*background: #fff;*/
+  /*box-shadow: 0 0px 1px 0 rgba(0,0,0,0.16), 0 0px 10px 0 rgba(0,0,0,0.12);*/
 }
 
 mybot .chatForm {
@@ -177,8 +181,10 @@ mybot .bot-txt:focus {
 }
 
 mybot .resultDiv .botResult {
-  background: #fff;
-  color: #000;
+  /*background: #fff;*/
+  background: #e67e00;
+  /*color: #000*/
+  color: #fff;
   border-radius: 3px;
   padding: 12px;
   font-size: 14px;
@@ -200,13 +206,19 @@ mybot .resultDiv .botResult:before {
   height: 0;
   border-top: 0px solid rgba(0, 0, 0, 0);
   border-bottom: 15px solid rgba(0, 0, 0, 0);
-  border-right: 15px solid #fff;
+  /*border-right: 15px solid #fff;*/
+  border-right: 15px solid #e67e00;
   left: -15px;
   margin-top: -12px;
 }
 
 mybot .resultDiv .userEnteredText {
+<<<<<<< HEAD
   background: #6e6e6e;
+=======
+  /*background: #9C27B0;*/
+  background:#ffaf4d;
+>>>>>>> 14f63f1b6edd7c0df5f716f8d298cbb611cd076e
   float: right;
   color: #ffffff;
   border-radius: 3px;
@@ -230,7 +242,12 @@ mybot .resultDiv .userEnteredText:before {
   height: 0;
   border-top: 0px solid rgba(0, 0, 0, 0);
   border-bottom: 15px solid rgba(0, 0, 0, 0);
+<<<<<<< HEAD
   border-left: 15px solid #6e6e6e;
+=======
+  /*border-left: 15px solid #9C27B0;*/
+  border-left: 15px solid #ffaf4d;
+>>>>>>> 14f63f1b6edd7c0df5f716f8d298cbb611cd076e
   position: absolute;
   right: -15px;
   margin-top: -12px;
@@ -246,9 +263,9 @@ mybot .profile_div {
 
 mybot .img-profile {
   width: 65px;
-  box-shadow: 0 0px 1px 0 rgba(0,0,0,0.16), 0 0px 10px 0 rgba(0,0,0,0.12);
-  background: white;
-  border-radius: 50px;
+  /*box-shadow: 0 0px 1px 0 rgba(0,0,0,0.16), 0 0px 10px 0 rgba(0,0,0,0.12);*/
+  /*background: white;*/
+  border-radius: 0px;
 }
 
 mybot .col-hgt {
@@ -268,7 +285,12 @@ mybot .chat-txt {
 
 /* Spinner start */
 mybot .spinner {
+<<<<<<< HEAD
   background: #6e6e6e;
+=======
+  /*background: #9C27B0;*/
+  background: #ffaf4d;
+>>>>>>> 14f63f1b6edd7c0df5f716f8d298cbb611cd076e
   width: 70px;
   text-align: center;
   display: none;
@@ -287,7 +309,12 @@ mybot .spinner:before {
   height: 0;
   border-top: 0px solid rgba(0, 0, 0, 0);
   border-bottom: 15px solid rgba(0, 0, 0, 0);
+<<<<<<< HEAD
   border-right: 15px solid #6e6e6e;
+=======
+  /*border-right: 15px solid #9C27B0;*/
+  border-right: 15px solid #ffaf4d;
+>>>>>>> 14f63f1b6edd7c0df5f716f8d298cbb611cd076e
   left: -15px;
   margin-top: -7px;
 }
