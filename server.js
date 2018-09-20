@@ -19,8 +19,18 @@ const sessionId = process.env.SESSION_ID;
 // Get the client bot to the do calls
 let DialogFlowBot = new DialogflowAPI(projectId,sessionId);
 
-// TODO: NEED TO ADD HYPERLINKS 
+// a Function to Add hyperlinks
+AddLinks = function(s){
 
+  let startofLink = s.indexOf("http");
+  if(startofLink === -1) return s;
+  let endofLink = s.lastIndexOf("/");
+  let link = s.slice(startofLink,endofLink+1);
+  let newlink = '<a href="'+link+'"></a>';
+  let newstring = s.replace(link,newlink);
+
+  return newstring;
+}
 
 // POST routes for handling requests from client
 // This route is handling requests from the client using the following
@@ -33,7 +43,8 @@ app.post('/Dialogflow/query', function(req, res) {
     var question = req.body.question;
     if(Debug) console.log("Question received = " + question);
     DialogFlowBot.GetReplyFromDialogflow(question,function(response) {
-      res.send(response);
+      let s = AddLinks(response);
+      res.send(s);
     });
 
     }
