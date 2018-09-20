@@ -24,8 +24,8 @@
             <div class="chatlogs">
 
                 <div class="chat friend">
-                    <div class="user-photo"><img src="img/nf2.png"></div>
-                    <p id ="botdisplaywindow" class="chat-message">Hi there?</p>
+                    <div id ="botdisplaywindow" class="user-photo"><img src="img/nf2.png"></div>
+                    <p  class="chat-message">Hi there?</p>
                 </div>
 
                 <div class="chat friend" id="loadingGif" style="display: none;">
@@ -50,7 +50,7 @@
         <script>
         function respondToQuestion(){
           let txt = document.getElementById("inputtext").value;
-          document.getElementById("botdisplaywindow").innerHTML += '<br>' + txt;
+          document.getElementById("botdisplaywindow").innerHTML += '<br>' + '<p class="chat-message">'+txt+'</p>';
           console.log("text entered = " + txt);
           makeRequestforData(txt);
           document.getElementById("inputtext").value = "";
@@ -70,7 +70,7 @@
           http.onreadystatechange = function() {//Call a function when the state changes.
             if(http.readyState == 4 && http.status == 200) {
                 console.log(http.responseText);
-                document.getElementById("botdisplaywindow").innerHTML += http.responseText;
+                document.getElementById("botdisplaywindow").innerHTML += '<br>' + '<p class="chat-message">'+http.responseText+'</p>';
               }
             }
             http.send(params);
