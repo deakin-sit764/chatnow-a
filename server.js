@@ -35,7 +35,7 @@ app.post('/Dialogflow/query', function(req, res) {
 
     }
   catch(e) {
-    res.send('[Error Receiving response from Dialogflow:]' + e + '/n');
+    res.send('[Error Receiving response from Dialogflow in server:]' + e + '/n');
   }
 })
 
