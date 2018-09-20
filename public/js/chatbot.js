@@ -2,6 +2,7 @@ console.log("chatbot.js v0.21");
 
 $(document).ready(function() {
 
+	let firstTimeOpen = true;
 	// Credentials
 	var baseUrl = "https://api.api.ai/v1/query?v=20160910&";
 	//var baseUrl = "";
@@ -70,6 +71,11 @@ $(document).ready(function() {
 		$('.bot_profile').toggle();
 		$('.chatForm').toggle();
 		document.getElementById('chat-input').focus();
+		//Set greetings
+		if(firstTimeOpen){
+		setBotResponse("Hello there, my name is chatnow-a. I am here to answer questions about Now Finance products and point you in the right direction. I can understand questions in plain english. How can I assist you today?");
+		firstTimeOpen = false;
+	}
 	});
 
 	$('.close').click(function() {
@@ -153,14 +159,14 @@ $(document).ready(function() {
 		console.log("type: " + type);
 		console.log("url: " + url);
 		console.log("contentType: " + ct);
-		console.log("params: " + params);						
+		console.log("params: " + params);
 */
 		/*$.ajax({
 			/*type: type,
 			url: url,
 			contentType: ct,
 			params: params + text,*/
- 			//dataType: 
+ 			//dataType:
 			/*type: "GET",
 			url: baseUrl+"query="+text+"&lang=en-us&sessionId="+mysession,
 			contentType: "application/json",
@@ -169,7 +175,7 @@ $(document).ready(function() {
 				"Authorization": "Bearer " + accessToken
 			},*/
 			// data: JSON.stringify({ query: text, lang: "en", sessionId: "somerandomthing" }),
-			
+
 			var http = new XMLHttpRequest();
   			var url = '/Dialogflow/query';
   			var params = 'question=' + text;//hello';
@@ -186,7 +192,7 @@ $(document).ready(function() {
 			main(data);
    		   		}
   			}
-    		
+
 
     		http.send(params);
     		//console.log(http);
@@ -228,7 +234,7 @@ $(document).ready(function() {
 
 	//------------------------------------------- Main function ------------------------------------------------
 	function main(data) {
-		
+
 		/*var action = data.result.action;
 		var speech = data.result.fulfillment.speech;
 		// use incomplete if u use required in api.ai questions in intent
@@ -245,7 +251,7 @@ $(document).ready(function() {
 		setBotResponse(data);
 
 		/*
-		
+
 		switch(action) {
 			// case 'your.action': // set in api.ai
 			// Perform operation/json api call based on action
