@@ -26,7 +26,7 @@ AddLinks = function(s){
   if(startofLink === -1) return s;
   let endofLink = s.lastIndexOf("/");
   let link = s.slice(startofLink,endofLink+1);
-  let newlink = '<a href="'+link+'"></a>';
+  let newlink = '<a href="'+link+'">'+link+'</a>';
   let newstring = s.replace(link,newlink);
 
   return newstring;

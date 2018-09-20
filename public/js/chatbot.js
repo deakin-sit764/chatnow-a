@@ -279,6 +279,7 @@ $(document).ready(function() {
 				$(BotResponse).appendTo('#result_div');
 			} else {
 				val = val.replace(new RegExp('\r?\n','g'), '<br />');
+				//alert(val);
 				var BotResponse = '<p class="botResult">'+val+'</p><div class="clearfix"></div>';
 				$(BotResponse).appendTo('#result_div');
 			}
