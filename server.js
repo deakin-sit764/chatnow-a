@@ -19,6 +19,9 @@ const sessionId = process.env.SESSION_ID;
 // Get the client bot to the do calls
 let DialogFlowBot = new DialogflowAPI(projectId,sessionId);
 
+// TODO: NEED TO ADD HYPERLINKS 
+
+
 // POST routes for handling requests from client
 // This route is handling requests from the client using the following
 // URL format: Dialogflow/query?question=hello%20World
