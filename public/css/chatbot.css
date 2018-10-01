@@ -395,6 +395,12 @@ mybot .suggestion .sugg-options {
   font-weight: 300;
 }
 
+#Dlogo{
+    height: 122px;
+    width: 112px;
+    margin-left: -16px;
+}
+
 mybot .suggestion .sugg-title {
   font-size: 15px;
   font-weight: 300;
