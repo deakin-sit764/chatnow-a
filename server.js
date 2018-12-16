@@ -72,7 +72,8 @@ var server = require('./watsonassistantapp')(app);
 passport.use(new Strategy({
   clientID: process.env.CLIENT_ID,
   clientSecret: process.env.CLIENT_SECRET,
-  callbackURL: 'https://chatnow-a-sit782-t32018.herokuapp.com/facebook/return'
+  callbackURL: 'https://chatnow-a-sit782-t32018.herokuapp.com/facebook/return',
+  profileFields: ['id', 'displayName', 'photos', 'email']
 },
 function(accessToken, refreshToken, profile, cb) {
   // In this example, the user's Facebook profile is supplied as the user
@@ -100,6 +101,10 @@ passport.deserializeUser(function(obj, cb) {
   cb(null, obj);
 });
 
+// Configure view engine to render EJS templates.
+app.set('views', __dirname + '/public');
+app.set('view engine', 'ejs');
+
 // Use application-level middleware for common functionality, including
 // logging, parsing, and session handling.
 app.use(require('morgan')('combined'));
@@ -114,13 +119,23 @@ app.use(passport.session());
 
 // Define routes for facebook.
 
+app.get('/',
+  function(req, res) {
+    res.render('index', { user: req.user });
+  });
+
+app.get('/logout/facebook',
+  function(req, res) {
+    req.logout();
+    res.redirect('/');
+});
 app.get('/login/facebook',
   passport.authenticate('facebook'));
 
 app.get('/facebook/return', 
   passport.authenticate('facebook', { failureRedirect: '/' }),
   function(req, res) {
-    res.redirect('/' );
+    res.redirect('/');
   });
 
 app.listen(process.env.PORT || 8080, () => console.log("Running Good!"));
