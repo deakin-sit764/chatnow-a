@@ -72,7 +72,7 @@ var server = require('./watsonassistantapp')(app);
 passport.use(new Strategy({
   clientID: process.env.CLIENT_ID,
   clientSecret: process.env.CLIENT_SECRET,
-  callbackURL: 'http://localhost:8080/facebook/return'
+  callbackURL: 'https://chatnow-a-sit782-t32018.herokuapp.com/facebook/return'
 },
 function(accessToken, refreshToken, profile, cb) {
   // In this example, the user's Facebook profile is supplied as the user
