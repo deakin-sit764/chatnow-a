@@ -89,7 +89,7 @@ function(accessToken, refreshToken, profile, cb) {
 passport.use(new googleStrategy({
 clientID: process.env.CLIENT_ID1,
 clientSecret: process.env.CLIENT_SECRET1,
-callbackURL: '/google/callback',
+callbackURL: 'https://chatnow-s.herokuapp.com/google/callback',
 profileFields: ['id', 'displayName', 'photos', 'email']
 },
 
