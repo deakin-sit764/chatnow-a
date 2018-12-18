@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const Debug = process.env.DEBUG;
 const passport = require('passport');
 const Strategy = require('passport-facebook').Strategy;
+const googleStrategy = require('passport-google-oauth20');
 
 //Add a path DialogFlowAccessAPI
 const DialogflowAPI = require('./DialogflowClientAccessAPI/query.js');
@@ -75,12 +76,26 @@ passport.use(new Strategy({
   callbackURL: 'https://chatnow-a-sit782-t32018.herokuapp.com/facebook/return',
   profileFields: ['id', 'displayName', 'photos', 'email']
 },
+
 function(accessToken, refreshToken, profile, cb) {
   // In this example, the user's Facebook profile is supplied as the user
   // record.  In a production-quality application, the Facebook profile should
   // be associated with a user record in the application's database, which
   // allows for account linking and authentication with other identity
   // providers.
+  return cb(null, profile);
+}));
+
+passport.use(new googleStrategy({
+clientID: process.env.CLIENT_ID1,
+clientSecret: process.env.CLIENT_SECRET1,
+callbackURL: '/google/callback',
+profileFields: ['id', 'displayName', 'photos', 'email']
+},
+
+(accessToken, refreshToken, profile, cb) => {
+  console.log ('callback function fired');
+  console.log(profile);
   return cb(null, profile);
 }));
 
@@ -117,10 +132,12 @@ app.use(require('express-session')({ secret: 'keyboard cat', resave: true, saveU
 app.use(passport.initialize());
 app.use(passport.session());
 
+
+//---------------------- ROUTING ---------------//
+
 // Define routes for facebook.
 
-app.get('/',
-  function(req, res) {
+app.get('/',(req, res) => {
     res.render('index', { user: req.user });
   });
 
@@ -137,5 +154,22 @@ app.get('/facebook/return',
   function(req, res) {
     res.redirect('/');
   });
+
+//define routes for google
+
+app.get('/logout/google',(req, res) => {
+    req.logout();
+    res.redirect('/');
+});
+app.get('/login/google',passport.authenticate('google',{
+    scope: ['profile']
+  }));
+
+app.get('/google/callback', passport.authenticate('google',{ failureRedirect: '/'}),
+  (req, res) => {
+    res.redirect('/');
+    res.send('logged in with google');
+  });
+
 
 app.listen(process.env.PORT || 8080, () => console.log("Running Good!"));
