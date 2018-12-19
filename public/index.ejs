@@ -23,6 +23,7 @@
 
       <div class="container">
         <div style="float: right; margin-top:40px;">
+
          <% if (!user) { %>
                 <a class="loginBtn loginBtn--google" href="/login/google" role="button" style="float: right; margin-right:40px;">
                               <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/14082/icon_google.png"/>
@@ -33,6 +34,7 @@
                                              Login with Facebook</a>
 
                     <% } else { %>
+                               <span id="uname" style="display:hidden"> <%= user.displayName %> </span>
                                <p style="float: right; margin-top: 53px;"">Hello, <%= user.displayName %>, <a href="/logout/google">Logout</a></p>
                              <% } %>
         </div>
