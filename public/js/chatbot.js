@@ -73,7 +73,7 @@ $(document).ready(function() {
 		document.getElementById('chat-input').focus();
 		//Set greetings
 		if(firstTimeOpen){
-		if(uname.length > 0)
+		if(uname !=undefined && uname.length > 0)
 		{
             setBotResponse("Hello " + uname +  ", my name is chatnow-a. I am here to answer questions about Now Finance products and point you in the right direction. I can understand questions in plain english. How can I assist you today?");
 
