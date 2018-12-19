@@ -8,7 +8,12 @@ $(document).ready(function() {
 	//var baseUrl = "";
 
 	var accessToken = "21b3b9deef38447ebe84f84631e28542";
-	var uname = document.getElementById("uname").innerText;
+	var uname = document.getElementById("uname");
+    if(uname !=null)
+    	uname = document.getElementById("uname").innerText;
+    else
+    	uname = "there";
+
 /*
   var http = new XMLHttpRequest();
   var url = '/Dialogflow/query';
@@ -73,16 +78,8 @@ $(document).ready(function() {
 		document.getElementById('chat-input').focus();
 		//Set greetings
 		if(firstTimeOpen){
-		if(uname !=undefined && uname.length > 0)
-		{
             setBotResponse("Hello " + uname +  ", my name is chatnow-a. I am here to answer questions about Now Finance products and point you in the right direction. I can understand questions in plain english. How can I assist you today?");
 
-        }
-		else
-		{
-            setBotResponse("Hello there, my name is chatnow-a. I am here to answer questions about Now Finance products and point you in the right direction. I can understand questions in plain english. How can I assist you today?");
-
-        }
 		firstTimeOpen = false;
 	}
 	});
