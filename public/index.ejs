@@ -22,25 +22,21 @@
     <nav class="navbar navbar-default navbar-transparent" role="navigation">
 
       <div class="container">
+        <div style="float: right; margin-top:40px;">
+         <% if (!user) { %>
+                <a class="loginBtn loginBtn--google" href="/login/google" role="button" style="float: right; margin-right:40px;">
+                              <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/14082/icon_google.png"/>
+                               Login with GOOGLE</a>
 
-          <% if (!user) { %>
-            <a class="loginBtn loginBtn--google" href="/login/google" role="button" style="float: right; margin-top: 53px;">
-              <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/14082/icon_google.png"/>
-               Login with GOOGLE</a>
-          <% } else { %>
-            <p style="float: right; margin-top: 53px;"">Hello, <%= user.displayName %>, <a href="/logout/google">Logout</a></p>
-          <% } %>
+                               <a class="loginBtn loginBtn-facebook" href="/login/facebook" role="button" style="float: right; margin-right:40px;">
+                                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/14082/icon_facebook.png"/>
+                                             Login with Facebook</a>
+
+                    <% } else { %>
+                               <p style="float: right; margin-top: 53px;"">Hello, <%= user.displayName %>, <a href="/logout/google">Logout</a></p>
+                             <% } %>
+        </div>
       </div>
-      <div class="container">
-
-          <% if (!user) { %>
-            <a class="loginBtn loginBtn-facebook" href="/login/facebook" role="button" style="float: right; margin-top: 50px;">
-              <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/14082/icon_facebook.png"/>
-               Login with Facebook</a>
-          <% } else { %>
-            <p style="float: right; margin-top: 50px;"">Hello, <%= user.displayName %>, <a href="/logout/facebook">Logout</a></p>
-          <% } %>
-
       
         
         <!-- Brand and toggle get grouped for better mobile display -->
