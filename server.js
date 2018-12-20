@@ -89,7 +89,7 @@ function(accessToken, refreshToken, profile, cb) {
 passport.use(new googleStrategy({
 clientID: process.env.CLIENT_ID1,
 clientSecret: process.env.CLIENT_SECRET1,
-callbackURL: '/google/callback',
+callbackURL: 'https://chatnow-a-sit782-t32018.herokuapp.com/google/callback',
 profileFields: ['id', 'displayName', 'photos', 'email']
 },
 
@@ -162,13 +162,13 @@ app.get('/logout/google',(req, res) => {
     res.redirect('/');
 });
 app.get('/login/google',passport.authenticate('google',{
-    scope: ['profile']
+   scope: ['profile']
   }));
 
 app.get('/google/callback', passport.authenticate('google',{ failureRedirect: '/'}),
   (req, res) => {
     res.redirect('/');
-    res.send('logged in with google');
+   // res.send('logged in with google');
   });
 
 
