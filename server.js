@@ -23,12 +23,12 @@ mongodb.MongoClient.connect(uri, function (err, client) {
 
     //Add a path DialogFlowAccessAPI
     const DialogflowAPI = require('./DialogflowClientAccessAPI/query.js');
-    require('dotenv').config({silent: true});
+    require('dotenv').config({ silent: true });
     app.use(express.static('public'));
 
     //set body-parser for processing POST route
     app.use(bodyParser.json());
-    app.use(bodyParser.urlencoded({extended: true}));
+    app.use(bodyParser.urlencoded({ extended: true }));
 
     //Set the project ID and session //
     const projectId = process.env.PROJECT_ID;
@@ -63,24 +63,14 @@ mongodb.MongoClient.connect(uri, function (err, client) {
             DialogFlowBot.GetReplyFromDialogflow(question, function (response) {
                 let s = AddLinks(response);
                 res.send(s);
-                var uname = document.getElementById("uname");
-                var today  = new Date();
-                today = today.toLocaleDateString("en-US");
-                if (uname != null)
-                    uname = document.getElementById("uname").innerText;
-                else
-                    uname = "anonymouse";
+
                 //collect the data to be send on the database
-                console.log(uname + ' '+ today);
                 let sessionData = [
                     {
                         query: question,
-                        answer: response,
-                        uname: uname,
-                        date: today
+                        answer: response
                     }
                 ];
-
                 // add a collection
                 let chatSession = db.collection('session');
 
@@ -134,12 +124,11 @@ mongodb.MongoClient.connect(uri, function (err, client) {
             profileFields: ['id', 'displayName', 'photos', 'email']
         },
 
-        function (accessToken, refreshToken, profile, cb) {
-        console.log('callback function fired');
-    console.log(profile);
-    return cb(null, profile);
-}))
-    ;
+        (accessToken, refreshToken, profile, cb) => {
+            console.log('callback function fired');
+            console.log(profile);
+            return cb(null, profile);
+        }));
 
     // Configure Passport authenticated session persistence.
     //
@@ -166,8 +155,8 @@ mongodb.MongoClient.connect(uri, function (err, client) {
     // logging, parsing, and session handling.
     app.use(require('morgan')('combined'));
     app.use(require('cookie-parser')());
-    app.use(require('body-parser').urlencoded({extended: true}));
-    app.use(require('express-session')({secret: 'keyboard cat', resave: true, saveUninitialized: true}));
+    app.use(require('body-parser').urlencoded({ extended: true }));
+    app.use(require('express-session')({ secret: 'keyboard cat', resave: true, saveUninitialized: true }));
 
     // Initialize Passport and restore authentication state, if any, from the
     // session.
@@ -179,10 +168,9 @@ mongodb.MongoClient.connect(uri, function (err, client) {
 
     // Define routes for facebook.
 
-    app.get('/', function (req, res) {
-        res.render('index', {user: req.user});
-})
-    ;
+    app.get('/', (req, res) => {
+        res.render('index', { user: req.user });
+    });
 
     app.get('/logout/facebook',
         function (req, res) {
@@ -193,35 +181,27 @@ mongodb.MongoClient.connect(uri, function (err, client) {
         passport.authenticate('facebook'));
 
     app.get('/facebook/return',
-        passport.authenticate('facebook', {failureRedirect: '/'}),
+        passport.authenticate('facebook', { failureRedirect: '/' }),
         function (req, res) {
             res.redirect('/');
         });
 
     //define routes for google
 
-    app.get('/logout/google', function (req, res) {
+    app.get('/logout/google', (req, res) => {
         req.logout();
-    res.redirect('/');
-})
-    ;
+        res.redirect('/');
+    });
     app.get('/login/google', passport.authenticate('google', {
         scope: ['profile']
     }));
 
-    app.get('/google/callback', passport.authenticate('google', {failureRedirect: '/'}),
-        function (req, res) {
-        res.redirect('/');
-    // res.send('logged in with google');
-})
-    ;
+    app.get('/google/callback', passport.authenticate('google', { failureRedirect: '/' }),
+        (req, res) => {
+            res.redirect('/');
+            // res.send('logged in with google');
+        });
 
 }); // database connection
 
-app.listen(process.env.PORT || 8080, function ()
-{
-    console.log("Running Good!")
-}
-)
-;
-
+app.listen(process.env.PORT || 8080, () => console.log("Running Good!"));
