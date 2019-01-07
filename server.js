@@ -71,15 +71,14 @@ mongodb.MongoClient.connect(uri, function (err, client) {
                 else
                     uname = "anonymouse";
                 //collect the data to be send on the database
+                console.log(uname + ' '+ today);
                 let sessionData = [
                     {
                         query: question,
-                        answer: response,
-                        uname: uname,
-                        date: today
+                        answer: response
                     }
                 ];
-                console.log(sessionData);
+
                 // add a collection
                 let chatSession = db.collection('session');
 
