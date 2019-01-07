@@ -79,6 +79,7 @@ mongodb.MongoClient.connect(uri, function (err, client) {
                         date: today
                     }
                 ];
+                console.log(sessionData);
                 // add a collection
                 let chatSession = db.collection('session');
 
