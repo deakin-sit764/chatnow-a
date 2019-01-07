@@ -193,7 +193,7 @@ $(document).ready(function () {
 
         var http = new XMLHttpRequest();
         var url = '/Dialogflow/query';
-        var params = 'question=' + text + '&uname =' + uname + '&d=' + today;//hello';
+        var params = 'question=' + text + '&uname=' + uname + '&d=' + today;//hello';
         http.open('POST', url, true);
 
         //Send the proper header information along with the request
@@ -204,7 +204,7 @@ $(document).ready(function () {
                 console.log(http.responseText);
                 data = http.responseText;
                 console.log("server response: " + data);
-                console.log(params);    
+                console.log(params);
                 main(data);
             }
         }
