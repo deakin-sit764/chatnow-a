@@ -188,7 +188,7 @@ $(document).ready(function () {
         else
             uname = "anonymouse";
         //collect the data to be send on the database
-        console.log("user name: " + uname + ' on :' + today);
+
 
         var http = new XMLHttpRequest();
         var url = '/Dialogflow/query';
@@ -203,6 +203,7 @@ $(document).ready(function () {
                 console.log(http.responseText);
                 data = http.responseText;
                 console.log("server response: " + data);
+                console.log("user name: " + uname + ' on :' + today);
                 main(data);
             }
         }
