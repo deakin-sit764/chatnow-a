@@ -63,7 +63,16 @@ mongodb.MongoClient.connect(uri, function (err, client) {
             DialogFlowBot.GetReplyFromDialogflow(question, function (response) {
                 let s = AddLinks(response);
                 res.send(s);
-
+                var uname = document.getElementById("uname");
+                var today  = new Date();
+                today = today.toLocaleDateString("en-US");
+                if (uname != null)
+                    uname = document.getElementById("uname").innerText;
+                else
+                    uname = "anonymouse";
+                //collect the data to be send on the database
+                console.log(uname + ' '+ today);
+                
                 //collect the data to be send on the database
                 let sessionData = [
                     {
