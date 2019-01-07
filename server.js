@@ -72,7 +72,9 @@ mongodb.MongoClient.connect(uri, function (err, client) {
                 let sessionData = [
                     {
                         query: question,
-                        answer: response
+                        answer: response,
+                        uname: uname,
+                        qdate: today
                     }
                 ];
                 // add a collection
