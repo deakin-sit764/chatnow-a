@@ -59,19 +59,14 @@ mongodb.MongoClient.connect(uri, function (err, client) {
     app.post('/Dialogflow/query', function (req, res) {
         try {
             var question = req.body.question;
+            var uname = req.body.unmae;
+            var today = req.body.d;
+            console.log("Recieved data : " + uname + ' ' + today)
             if (Debug) console.log("Question received = " + question);
             DialogFlowBot.GetReplyFromDialogflow(question, function (response) {
                 let s = AddLinks(response);
                 res.send(s);
-                var uname = document.getElementById("uname");
-                var today  = new Date();
-                today = today.toLocaleDateString("en-US");
-                if (uname != null)
-                    uname = document.getElementById("uname").innerText;
-                else
-                    uname = "anonymouse";
-                //collect the data to be send on the database
-                alert(uname + ' '+ today);
+
 
                 //collect the data to be send on the database
                 let sessionData = [
