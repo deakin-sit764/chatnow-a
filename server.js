@@ -63,19 +63,21 @@ mongodb.MongoClient.connect(uri, function (err, client) {
             DialogFlowBot.GetReplyFromDialogflow(question, function (response) {
                 let s = AddLinks(response);
                 res.send(s);
-                // var uname = document.getElementById("uname");
-                // var today  = new Date();
-                // today = today.toLocaleDateString("en-US");
-                // if (uname != null)
-                //     uname = document.getElementById("uname").innerText;
-                // else
-                //     uname = "anonymouse";
-                // //collect the data to be send on the database
-                // console.log(uname + ' '+ today);
+                var uname = document.getElementById("uname");
+                var today  = new Date();
+                today = today.toLocaleDateString("en-US");
+                if (uname != null)
+                    uname = document.getElementById("uname").innerText;
+                else
+                    uname = "anonymouse";
+                //collect the data to be send on the database
+                console.log(uname + ' '+ today);
                 let sessionData = [
                     {
                         query: question,
-                        answer: response
+                        answer: response,
+                        uname: uname,
+                        date: today
                     }
                 ];
 
@@ -132,7 +134,7 @@ mongodb.MongoClient.connect(uri, function (err, client) {
             profileFields: ['id', 'displayName', 'photos', 'email']
         },
 
-        (accessToken, refreshToken, profile, cb) = > {
+        function (accessToken, refreshToken, profile, cb) {
         console.log('callback function fired');
     console.log(profile);
     return cb(null, profile);
@@ -177,7 +179,7 @@ mongodb.MongoClient.connect(uri, function (err, client) {
 
     // Define routes for facebook.
 
-    app.get('/', (req, res) = > {
+    app.get('/', function (req, res) {
         res.render('index', {user: req.user});
 })
     ;
@@ -198,7 +200,7 @@ mongodb.MongoClient.connect(uri, function (err, client) {
 
     //define routes for google
 
-    app.get('/logout/google', (req, res) = > {
+    app.get('/logout/google', function (req, res) {
         req.logout();
     res.redirect('/');
 })
@@ -208,7 +210,7 @@ mongodb.MongoClient.connect(uri, function (err, client) {
     }));
 
     app.get('/google/callback', passport.authenticate('google', {failureRedirect: '/'}),
-        (req, res) = > {
+        function (req, res) {
         res.redirect('/');
     // res.send('logged in with google');
 })
@@ -216,7 +218,10 @@ mongodb.MongoClient.connect(uri, function (err, client) {
 
 }); // database connection
 
-app.listen(process.env.PORT || 8080, () = > console.log("Running Good!")
+app.listen(process.env.PORT || 8080, function ()
+{
+    console.log("Running Good!")
+}
 )
 ;
 
