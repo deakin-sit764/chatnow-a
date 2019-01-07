@@ -130,6 +130,13 @@ $(document).ready(function () {
     $('#chat-input').on('keyup keypress', function (e) {
         var keyCode = e.keyCode || e.which;
         var text = $("#chat-input").val();
+        var uname = document.getElementById("uname");
+        var today = new Date();
+        today = today.toLocaleDateString("en-US");
+        if (uname != null)
+            uname = document.getElementById("uname").innerText;
+        else
+            uname = "anonymouse";
         if (keyCode === 13) {
             if (text == "" || $.trim(text) == '') {
                 e.preventDefault();
@@ -137,7 +144,7 @@ $(document).ready(function () {
             } else {
                 $("#chat-input").blur();
                 setUserResponse(text);
-                send(text);
+                send(text,uname,today);
                 e.preventDefault();
                 return false;
             }
@@ -146,7 +153,7 @@ $(document).ready(function () {
 
 
     //------------------------------------------- Send request to API.AI ---------------------------------------
-    function send(text) {
+    function send(text,uname,today) {
         /*console.log($.ajax({
             type: "POST",
             url: "/Dialogflow/query",
@@ -180,19 +187,13 @@ $(document).ready(function () {
             "Authorization": "Bearer " + accessToken
         },*/
         // data: JSON.stringify({ query: text, lang: "en", sessionId: "somerandomthing" }),
-        var uname = document.getElementById("uname");
-        var today = new Date();
-        today = today.toLocaleDateString("en-US");
-        if (uname != null)
-            uname = document.getElementById("uname").innerText;
-        else
-            uname = "anonymouse";
+
         //collect the data to be send on the database
 
 
         var http = new XMLHttpRequest();
         var url = '/Dialogflow/query';
-        var params = 'question=' + text + '&uname =' + uname + 'd=' + today;//hello';
+        var params = 'question=' + text + '&uname =' + uname + '&d=' + today;//hello';
         http.open('POST', url, true);
 
         //Send the proper header information along with the request
@@ -203,7 +204,7 @@ $(document).ready(function () {
                 console.log(http.responseText);
                 data = http.responseText;
                 console.log("server response: " + data);
-                console.log("user name: " + uname + ' on :' + today);
+                console.log(params);    
                 main(data);
             }
         }
