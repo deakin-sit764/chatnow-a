@@ -59,7 +59,7 @@ mongodb.MongoClient.connect(uri, function (err, client) {
     app.post('/Dialogflow/query', function (req, res) {
         try {
             var question = req.body.question;
-            var uname = req.body.unmae;
+            var uname = req.body.uname;
             var today = req.body.d;
             console.log("Recieved data : " + uname + ' ' + today)
             if (Debug) console.log("Question received = " + question);
