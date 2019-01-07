@@ -71,8 +71,8 @@ mongodb.MongoClient.connect(uri, function (err, client) {
                 else
                     uname = "anonymouse";
                 //collect the data to be send on the database
-                console.log(uname + ' '+ today);
-                
+                alert(uname + ' '+ today);
+
                 //collect the data to be send on the database
                 let sessionData = [
                     {
