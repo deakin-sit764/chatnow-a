@@ -10,7 +10,7 @@ const mongodb = require('mongodb');
 //connecting to database
 let uri = 'mongodb://chatnow_demo:chatnow2019!@ds053305.mlab.com:53305/chatbot_session';
 
-mongodb.MongoClient.connect(uri, function (err, client) {
+mongodb.MongoClient.connect(uri,{ useNewUrlParser: true }, function (err, client) {
 
     if (err) throw err;
 
@@ -60,8 +60,8 @@ mongodb.MongoClient.connect(uri, function (err, client) {
         try {
             var question = req.body.question;
             var uname = req.body.uname;
-            var today = req.body.d;
-            console.log("Recieved data : " + uname + ' ' + today)
+            var timeAndDate = req.body.date+" at "+req.body.hour+":"+req.body.minutes+":"+req.body.seconds;
+            console.log("Recieved data : " + uname + ' ' + timeAndDate);
             if (Debug) console.log("Question received = " + question);
             DialogFlowBot.GetReplyFromDialogflow(question, function (response) {
                 let s = AddLinks(response);
@@ -69,21 +69,24 @@ mongodb.MongoClient.connect(uri, function (err, client) {
 
 
                 //collect the data to be send on the database
-                let sessionData = [
+                var sessionData = 
                     {
                         query: question,
                         answer: response,
                         uname: uname,
-                        qdate: today
+                        dateAndTime: timeAndDate                     
                     }
-                ];
+                ;
                 // add a collection
                 let chatSession = db.collection('session');
 
                 // insert the session data
-                chatSession.insert(sessionData, function (err, result) {
+                chatSession.insertOne(sessionData, function (err, result) {
                     if (err) throw err;
                 });
+                
+               
+              
 
             });
 

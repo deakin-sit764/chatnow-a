@@ -131,12 +131,15 @@ $(document).ready(function () {
         var keyCode = e.keyCode || e.which;
         var text = $("#chat-input").val();
         var uname = document.getElementById("uname");
-        var today = new Date();
-        today = today.toLocaleDateString("en-US");
+        var date = new Date();
+        var hour = date.getHours();
+        var minutes = date.getMinutes();
+        var seconds = date.getSeconds();
+        date = date.toLocaleDateString("en-AU");
         if (uname != null)
             uname = document.getElementById("uname").innerText;
         else
-            uname = "anonymouse";
+            uname = "anonymous";
         if (keyCode === 13) {
             if (text == "" || $.trim(text) == '') {
                 e.preventDefault();
@@ -144,7 +147,7 @@ $(document).ready(function () {
             } else {
                 $("#chat-input").blur();
                 setUserResponse(text);
-                send(text,uname,today);
+                send(text,uname,date,hour,minutes,seconds);
                 e.preventDefault();
                 return false;
             }
@@ -153,7 +156,7 @@ $(document).ready(function () {
 
 
     //------------------------------------------- Send request to API.AI ---------------------------------------
-    function send(text,uname,today) {
+    function send(text,uname,date,hour,minutes,seconds) {
         /*console.log($.ajax({
             type: "POST",
             url: "/Dialogflow/query",
@@ -193,7 +196,7 @@ $(document).ready(function () {
 
         var http = new XMLHttpRequest();
         var url = '/Dialogflow/query';
-        var params = 'question=' + text + '&uname=' + uname.trim() + '&d=' + today;//hello';
+        var params = 'question=' + text + '&uname=' + uname.trim() + '&date=' + date + '&hour=' + hour +'&minutes=' + minutes +'&seconds='+seconds;
         http.open('POST', url, true);
 
         //Send the proper header information along with the request
