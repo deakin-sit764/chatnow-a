@@ -17,13 +17,9 @@
 
   </head>
   <body  background= img\Bground.jpg>
-
-
-    <nav class="navbar navbar-default navbar-transparent" role="navigation">
-
+    <nav class="navbar navbar-default navbar-transparent" background-color="transparent" role="navigation">
       <div class="container">
-        <div style="float: right; margin-top:40px;">
-
+        <div style="float: right; margin-top:20px;">
          <% if (!user) { %>
                 <a class="loginBtn loginBtn--google" href="/login/google" role="button" style="float: right; margin-right:40px;">
                               <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/14082/icon_google.png"/>
@@ -39,19 +35,8 @@
                              <% } %>
         </div>
       </div>
-      
-        
         <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          </button>
-             <a class="navbar-brand" href="/"> <a href="http://www.deakin.edu.au"> <img src="img/logo_deakin.svg" id="Dlogo"></a> </a>
 
-         </div>
         <!-- /.navbar-right -->
 
       </div>
@@ -63,8 +48,7 @@
           <div class="col-md-7">
             <h1>Now Finance Chatbot</h1>
             <p>This is a demonstration of intelligent chatbot design concepts which are able to provide a near instant and 24/7 service to customers. Our chatbot designs aim to provide an enhanced customer experience in an efficient and effective way.</p>
-            <p><a class="btn btn-primary-border btn-lg" href="#" role="button" onclick="startDialogChat()">Try Dialogflow</a>
-            <a class="btn btn-primary-border btn-lg" href="#" role="button" onclick="startWatsonChat()">Try IBM Watson</a>
+
           </div>
           <div class="col-md-4 col-md-offset-1 hidden-sm hidden-xs">
 
