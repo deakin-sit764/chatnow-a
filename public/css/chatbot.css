@@ -207,7 +207,6 @@ mybot .resultDiv .botResult:before {
 }
 
 mybot .resultDiv .userEnteredText {
-<<<<<<< HEAD
   background: #6e6e6e;
     background-color: #fe7436;
 
@@ -280,7 +279,6 @@ mybot .chat-txt {
 
 /* Spinner start */
 mybot .spinner {
-<<<<<<< HEAD
   background: #6e6e6e;
 =======
   /*background: #9C27B0;*/
@@ -304,7 +302,6 @@ mybot .spinner:before {
   height: 0;
   border-top: 0px solid rgba(0, 0, 0, 0);
   border-bottom: 15px solid rgba(0, 0, 0, 0);
-<<<<<<< HEAD
   border-right: 15px solid #6e6e6e;
 =======
   /*border-right: 15px solid #9C27B0;*/
