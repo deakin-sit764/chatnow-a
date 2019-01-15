@@ -10,7 +10,7 @@ const mongodb = require('mongodb');
 //connecting to database
 let uri = 'mongodb://chatnow_demo:chatnow2019!@ds053305.mlab.com:53305/chatbot_session';
 
-mongodb.MongoClient.connect(uri,{ useNewUrlParser: true }, function (err, client) {
+mongodb.MongoClient.connect(uri, { useNewUrlParser: true }, function (err, client) {
 
     if (err) throw err;
 
@@ -60,33 +60,53 @@ mongodb.MongoClient.connect(uri,{ useNewUrlParser: true }, function (err, client
         try {
             var question = req.body.question;
             var uname = req.body.uname;
-            var timeAndDate = req.body.date+" at "+req.body.hour+":"+req.body.minutes+":"+req.body.seconds;
+            var timeAndDate = req.body.date + " at " + req.body.hour + ":" + req.body.minutes + ":" + req.body.seconds;
+
             console.log("Recieved data : " + uname + ' ' + timeAndDate);
+
             if (Debug) console.log("Question received = " + question);
             DialogFlowBot.GetReplyFromDialogflow(question, function (response) {
                 let s = AddLinks(response);
                 res.send(s);
 
-
-                //collect the data to be send on the database
-                var sessionData = 
-                    {
-                        query: question,
-                        answer: response,
-                        uname: uname,
-                        dateAndTime: timeAndDate                     
-                    }
-                ;
                 // add a collection
                 let chatSession = db.collection('session');
 
-                // insert the session data
-                chatSession.insertOne(sessionData, function (err, result) {
-                    if (err) throw err;
-                });
-                
-               
-              
+                //collect the data to be send on the database
+                var sessionData =
+                {
+                    username: uname,
+                    conversation: [{ dateAndTime: timeAndDate, query: question, answer: response }]
+                };
+
+                if (uname == "anonymous1") {
+                    // insert the session data
+                    chatSession.insertOne(sessionData, function (err, result) {
+                        if (err) throw err;
+                    });
+                } else {
+                    //query for the document with the specified username
+                    var query = { username: "anonymous" };
+
+                    var newconversation = { $addToSet: { conversation: { dateAndTime: timeAndDate, query: question, answer: response } } };
+                    chatSession.updateOne(query, newconversation, function (err, res) {
+                        if (err) throw err;
+
+                      if(res.matchedCount==0 ){
+                        // insert the session data
+                        chatSession.insertOne(sessionData, function (err, result) {
+                            if (err) throw err;
+                        });
+
+                      }else{
+                        console.log(uname + " conversation has been updated");
+                      }  
+                        
+                        
+                    });
+
+                }
+
 
             });
 
@@ -111,11 +131,11 @@ mongodb.MongoClient.connect(uri,{ useNewUrlParser: true }, function (err, client
     // with a user object, which will be set at `req.user` in route handlers after
     // authentication.
     passport.use(new Strategy({
-            clientID: process.env.CLIENT_ID,
-            clientSecret: process.env.CLIENT_SECRET,
-            callbackURL: 'https://chatnow-a-sit782-t32018.herokuapp.com/facebook/return',
-            profileFields: ['id', 'displayName', 'photos', 'email']
-        },
+        clientID: process.env.CLIENT_ID,
+        clientSecret: process.env.CLIENT_SECRET,
+        callbackURL: 'https://chatnow-a-sit782-t32018.herokuapp.com/facebook/return',
+        profileFields: ['id', 'displayName', 'photos', 'email']
+    },
 
         function (accessToken, refreshToken, profile, cb) {
             // In this example, the user's Facebook profile is supplied as the user
@@ -127,11 +147,11 @@ mongodb.MongoClient.connect(uri,{ useNewUrlParser: true }, function (err, client
         }));
 
     passport.use(new googleStrategy({
-            clientID: process.env.CLIENT_ID1,
-            clientSecret: process.env.CLIENT_SECRET1,
-            callbackURL: 'https://chatnow-a-sit782-t32018.herokuapp.com/google/callback',
-            profileFields: ['id', 'displayName', 'photos', 'email']
-        },
+        clientID: process.env.CLIENT_ID1,
+        clientSecret: process.env.CLIENT_SECRET1,
+        callbackURL: 'https://chatnow-a-sit782-t32018.herokuapp.com/google/callback',
+        profileFields: ['id', 'displayName', 'photos', 'email']
+    },
 
         (accessToken, refreshToken, profile, cb) => {
             console.log('callback function fired');
