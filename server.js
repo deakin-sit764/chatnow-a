@@ -79,14 +79,14 @@ mongodb.MongoClient.connect(uri, { useNewUrlParser: true }, function (err, clien
                     conversation: [{ dateAndTime: timeAndDate, query: question, answer: response }]
                 };
 
-                if (uname == "anonymous1") {
+                if (uname == "anonymous") {
                     // insert the session data
                     chatSession.insertOne(sessionData, function (err, result) {
                         if (err) throw err;
                     });
                 } else {
                     //query for the document with the specified username
-                    var query = { username: "anonymous" };
+                    var query = { username: uname };
 
                     var newconversation = { $addToSet: { conversation: { dateAndTime: timeAndDate, query: question, answer: response } } };
                     chatSession.updateOne(query, newconversation, function (err, res) {
