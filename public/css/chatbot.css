@@ -113,7 +113,7 @@ mybot.left .profile_div {
 mybot .chatCont {
   position: fixed;
   width: 401px;
-  height: 400px !important;
+  height: 400px;
   border: 1.5px solid #fe7436;
   bottom: 65px;
   right: 0;

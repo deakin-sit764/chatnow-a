@@ -25,8 +25,7 @@ var config = credentialsConfig;
 // 	storageBucket: "bucket.appspot.com"
 // };
 
-
-firebase.initializeApp(config);
+ firebase.initializeApp(config);
 
 // Key for this instance of the chat interface
 var newKey = firebase.database().ref(botName).push().key;

@@ -25,6 +25,7 @@
     "passport-google-oauth": "^1.0.0",
     "passport-google-oauth20": "^1.0.0",
     "python-shell": "^0.5.0",
-    "watson-developer-cloud": "^3.8.0"
+    "watson-developer-cloud": "^3.8.0",
+    "yuicompressor": "^2.4.8"
   }
 }
