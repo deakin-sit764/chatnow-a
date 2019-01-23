@@ -330,21 +330,7 @@ blockquote.gogo-quote h2 {
     background: #e74b37;
 }
 @media only screen and (max-width: 600px) {
-    .container {
-        display: none;
-    }
-    body
-    {
-        background-image: none;
-    }
-    .l-section-full-height
-    {
-        display: none;
-    }
-    .jumbotron
-    {
-        background-image: none;
-    }
+
     mybot .chatCont {
         width: 100% !important;
         height: 80% !important;
