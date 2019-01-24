@@ -91,7 +91,7 @@ mongodb.MongoClient.connect(uri, { useNewUrlParser: true }, function (err, clien
                     //query for sessionID of the anonymous
                     var query = { sessionId: mySession };
                     // add new conversation data
-                    var newconversation = { $addToSet: { conversation: { dateAndTime: timeAndDate, query: question, answer: response } } };
+                    var newconversation = { $addToSet: { conversation: { dateAndTime: timeAndDate, userInput: question, chatbotResponse: response } } };
 
                     chatSession.updateOne(query, newconversation, function (err, res) {
                         if (err) throw err;
@@ -107,7 +107,7 @@ mongodb.MongoClient.connect(uri, { useNewUrlParser: true }, function (err, clien
                     //query for the document with the specified username
                     var query = { username: uname };
 
-                    var newconversation = { $addToSet: { conversation: { dateAndTime: timeAndDate, query: question, answer: response } } };
+                    var newconversation = { $addToSet: { conversation: { dateAndTime: timeAndDate, userInput: question, chatbotResponse: response } } };
                     chatSession.updateOne(query, newconversation, function (err, res) {
                         if (err) throw err;
 
