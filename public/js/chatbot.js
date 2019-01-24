@@ -135,6 +135,7 @@ $(document).ready(function () {
         var hour = date.getHours();
         var minutes = date.getMinutes();
         var seconds = date.getSeconds();
+
         date = date.toLocaleDateString("en-AU");
         if (uname != null)
             uname = document.getElementById("uname").innerText;
@@ -147,7 +148,7 @@ $(document).ready(function () {
             } else {
                 $("#chat-input").blur();
                 setUserResponse(text);
-                send(text,uname,date,hour,minutes,seconds);
+                send(text,uname,date,hour,minutes,seconds,mysession);
                 e.preventDefault();
                 return false;
             }
@@ -156,7 +157,7 @@ $(document).ready(function () {
 
 
     //------------------------------------------- Send request to API.AI ---------------------------------------
-    function send(text,uname,date,hour,minutes,seconds) {
+    function send(text,uname,date,hour,minutes,seconds,mysession) {
         /*console.log($.ajax({
             type: "POST",
             url: "/Dialogflow/query",
@@ -196,7 +197,7 @@ $(document).ready(function () {
 
         var http = new XMLHttpRequest();
         var url = '/Dialogflow/query';
-        var params = 'question=' + text + '&uname=' + uname.trim() + '&date=' + date + '&hour=' + hour +'&minutes=' + minutes +'&seconds='+seconds;
+        var params = 'question=' + text + '&uname=' + uname.trim() + '&date=' + date + '&hour=' + hour +'&minutes=' + minutes +'&seconds='+seconds + '&mysession=' + mysession;
         http.open('POST', url, true);
 
         //Send the proper header information along with the request

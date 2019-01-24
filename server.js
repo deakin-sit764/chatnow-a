@@ -61,8 +61,9 @@ mongodb.MongoClient.connect(uri, { useNewUrlParser: true }, function (err, clien
             var question = req.body.question;
             var uname = req.body.uname;
             var timeAndDate = req.body.date + " at " + req.body.hour + ":" + req.body.minutes + ":" + req.body.seconds;
+            var mySession = req.body.mysession;
 
-            console.log("Recieved data : " + uname + ' ' + timeAndDate);
+            console.log("Recieved data : " + uname + ' ' + timeAndDate + ' ' + mySession);
 
             if (Debug) console.log("Question received = " + question);
             DialogFlowBot.GetReplyFromDialogflow(question, function (response) {
@@ -73,16 +74,34 @@ mongodb.MongoClient.connect(uri, { useNewUrlParser: true }, function (err, clien
                 let chatSession = db.collection('session');
 
                 //collect the data to be send on the database
-                var sessionData =
+                var chatConversationData =
                 {
                     username: uname,
-                    conversation: [{ dateAndTime: timeAndDate, query: question, answer: response }]
+                    conversation: [{ dateAndTime: timeAndDate, userInput: question, chatbotResponse: response }]
+                };
+
+                var chatConversationDataForAnon =
+                {
+                    username: uname,
+                    sessionId: mySession,
+                    conversation: [{ dateAndTime: timeAndDate, userInput: question, chatbotResponse: response }]
                 };
 
                 if (uname == "anonymous") {
-                    // insert the session data
-                    chatSession.insertOne(sessionData, function (err, result) {
+                    //query for sessionID of the anonymous
+                    var query = { sessionId: mySession };
+                    // add new conversation data
+                    var newconversation = { $addToSet: { conversation: { dateAndTime: timeAndDate, query: question, answer: response } } };
+
+                    chatSession.updateOne(query, newconversation, function (err, res) {
                         if (err) throw err;
+
+                        if (res.matchedCount == 0) {
+                            // insert the session data
+                            chatSession.insertOne(chatConversationDataForAnon, function (err, result) {
+                                if (err) throw err;
+                            });
+                        }
                     });
                 } else {
                     //query for the document with the specified username
@@ -92,17 +111,15 @@ mongodb.MongoClient.connect(uri, { useNewUrlParser: true }, function (err, clien
                     chatSession.updateOne(query, newconversation, function (err, res) {
                         if (err) throw err;
 
-                      if(res.matchedCount==0 ){
-                        // insert the session data
-                        chatSession.insertOne(sessionData, function (err, result) {
-                            if (err) throw err;
-                        });
+                        if (res.matchedCount == 0) {
+                            // insert the session data
+                            chatSession.insertOne(chatConversationData, function (err, result) {
+                                if (err) throw err;
+                            });
 
-                      }else{
-                        console.log(uname + " conversation has been updated");
-                      }  
-                        
-                        
+                        }
+
+
                     });
 
                 }
