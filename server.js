@@ -119,11 +119,9 @@ mongodb.MongoClient.connect(uri, { useNewUrlParser: true }, function (err, clien
 
                         }
 
-
                     });
 
                 }
-
 
             });
 
@@ -212,6 +210,32 @@ mongodb.MongoClient.connect(uri, { useNewUrlParser: true }, function (err, clien
 
     //---------------------- ROUTING ---------------//
 
+    app.post('/addUserDetails', function(req,res){
+        var employmentStatus = req.body.employmentStatus;
+        var salary = req.body.salary;
+        var uname = req.body.uname;
+        var borrowed = req.body.borrowed;
+        var mySession = req.body.mysession;
+        let chatSession = db.collection('session');
+
+        var UserDataForAnon =
+            {
+                username: uname,
+                sessionId: mySession,
+                details: [{ employmentStatus: employmentStatus, salary: salary, borrowed: borrowed }]
+            };
+
+        chatSession.insertOne(UserDataForAnon, function (err, result) {
+            if (err) {
+                console.log(err);
+                throw err;
+            }
+            console.log(result);
+            res.send(result);
+
+        });
+
+    });
     // Define routes for facebook.
 
     app.get('/', (req, res) => {
@@ -229,7 +253,8 @@ mongodb.MongoClient.connect(uri, { useNewUrlParser: true }, function (err, clien
     app.get('/facebook/return',
         passport.authenticate('facebook', { failureRedirect: '/' }),
         function (req, res) {
-            res.redirect('/');
+
+          //  res.redirect('/');
         });
 
     //define routes for google

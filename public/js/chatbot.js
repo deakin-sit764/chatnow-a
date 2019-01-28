@@ -1,7 +1,4 @@
-console.log("chatbot.js v0.21");
-
 $(document).ready(function () {
-
     let firstTimeOpen = true;
     // Credentials
     var baseUrl = "https://api.api.ai/v1/query?v=20160910&";
@@ -10,7 +7,10 @@ $(document).ready(function () {
     var accessToken = "21b3b9deef38447ebe84f84631e28542";
     var uname = document.getElementById("uname");
     if (uname != null)
+    {
         uname = document.getElementById("uname").innerText;
+        getUserInfo();
+    }  
     else
         uname = "there";
 
@@ -67,7 +67,6 @@ $(document).ready(function () {
         '</div><!--profile_div end-->';
 
     $("mybot").html(mybot);
-
     // ------------------------------------------ Toggle chatbot -----------------------------------------------
     $('.profile_div').click(function () {
         $('.profile_div').toggle();
@@ -78,9 +77,9 @@ $(document).ready(function () {
         //Set greetings
         if (firstTimeOpen) {
             setBotResponse("Hello " + uname + ", my name is chatnow-a. I am here to answer questions about Now Finance products and point you in the right direction. I can understand questions in plain english. How can I assist you today?");
-
             firstTimeOpen = false;
         }
+
     });
 
     $('.close').click(function () {
@@ -124,7 +123,45 @@ $(document).ready(function () {
 
     // Call Session init
     var mysession = session();
+    let isUserInforRequest = true;
+    let employmentStatus = "";
+    let salary = "";
+    let borrowed = "";
+    let currentQIndex = 1;
+    function getUserInfo()
+    {
+        switch (currentQIndex)
+        {
+            case 1:
+                setBotResponse('What is your employement status?');
+                break;
+            case 2:
+                setBotResponse('What is your salary?');
+                break;
+            case 3:
+                setBotResponse('Did you borrow before?');
+                break;
+            default:
+                var http = new XMLHttpRequest();
+                var url = '/addUserDetails';
+                var params = 'uname=' + uname.trim() + '&employmentStatus=' + employmentStatus + '&salary=' + salary +'&borrowed=' + borrowed+'&mysession=' + mysession;
+                http.open('POST', url, true);
 
+                //Send the proper header information along with the request
+                http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+                http.onreadystatechange = function () {//Call a function when the state changes.
+                    if (http.readyState == 4 && http.status == 200) {
+                        console.log(http.responseText);
+                        setBotResponse('Thanks for your detials!');
+                        isUserInforRequest = false;
+                    }
+                };
+                http.send(params);
+
+
+        }
+
+    }
 
     // on input/text enter--------------------------------------------------------------------------------------
     $('#chat-input').on('keyup keypress', function (e) {
@@ -148,7 +185,29 @@ $(document).ready(function () {
             } else {
                 $("#chat-input").blur();
                 setUserResponse(text);
-                send(text,uname,date,hour,minutes,seconds,mysession);
+                if(isUserInforRequest)
+                {
+                    console.log(currentQIndex);
+                    console.log(text);
+                    switch (currentQIndex)
+                    {
+                        case 1:
+                            employmentStatus = text;
+                            currentQIndex++;
+                            break;
+                        case 2:
+                            salary = text;
+                            currentQIndex++;
+                            break;
+                        case 3:
+                            borrowed = text;
+                            currentQIndex++;
+                            break;
+                    }
+                    getUserInfo();
+                }
+                else
+                    send(text,uname,date,hour,minutes,seconds,mysession);
                 e.preventDefault();
                 return false;
             }
