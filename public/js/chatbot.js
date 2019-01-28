@@ -9,8 +9,7 @@ $(document).ready(function () {
     if (uname != null)
     {
         uname = document.getElementById("uname").innerText;
-        getUserInfo();
-    }  
+    }
     else
         uname = "there";
 
@@ -78,6 +77,10 @@ $(document).ready(function () {
         if (firstTimeOpen) {
             setBotResponse("Hello " + uname + ", my name is chatnow-a. I am here to answer questions about Now Finance products and point you in the right direction. I can understand questions in plain english. How can I assist you today?");
             firstTimeOpen = false;
+        }
+        if (uname != null)
+        {
+            getUserInfo();
         }
 
     });
