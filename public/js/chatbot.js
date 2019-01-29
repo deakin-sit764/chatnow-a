@@ -188,28 +188,28 @@ $(document).ready(function () {
             } else {
                 $("#chat-input").blur();
                 setUserResponse(text);
-                if(isUserInforRequest)
-                {
-                    console.log(currentQIndex);
-                    console.log(text);
-                    switch (currentQIndex)
-                    {
-                        case 1:
-                            employmentStatus = text;
-                            currentQIndex++;
-                            break;
-                        case 2:
-                            salary = text;
-                            currentQIndex++;
-                            break;
-                        case 3:
-                            borrowed = text;
-                            currentQIndex++;
-                            break;
-                    }
-                    getUserInfo();
-                }
-                else
+                // if(isUserInforRequest)
+                // {
+                //     console.log(currentQIndex);
+                //     console.log(text);
+                //     switch (currentQIndex)
+                //     {
+                //         case 1:
+                //             employmentStatus = text;
+                //             currentQIndex++;
+                //             break;
+                //         case 2:
+                //             salary = text;
+                //             currentQIndex++;
+                //             break;
+                //         case 3:
+                //             borrowed = text;
+                //             currentQIndex++;
+                //             break;
+                //     }
+                //     getUserInfo();
+                // }
+                // else
                     send(text,uname,date,hour,minutes,seconds,mysession);
                 e.preventDefault();
                 return false;
